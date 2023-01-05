@@ -1,0 +1,12 @@
+.toplogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0 15px 0;
+}
+
+.applogo{
+    height: 55px;
+    width: auto;
+    margin-right: 15px;
+}
