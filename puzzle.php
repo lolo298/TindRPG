@@ -1,5 +1,5 @@
 <?php
-// include_once('./components/header.php');
+include_once('header.php');
 $nbr_pieces = 3;
 $finis = $nbr_pieces === 5
 ?>
