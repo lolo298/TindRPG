@@ -86,7 +86,7 @@
       </div>
       <form action="" id="Reponses"></form>
     </div>
-    <button id="valider" onclick="checkAnswer()">Valider</button>
+    <button id="valider" onclick="this.disable=true;checkAnswer();">Valider</button>
     <script src="./js/battle.js"></script>
   </body>
 </html>

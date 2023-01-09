@@ -96,6 +96,7 @@ function setQuestion(state) {
               answerHTML.appendChild(element);
             });
           });
+          document.querySelector('#valider').disabled = false;
           break;
         case "next":
           if( Object.keys(questions).length < questionNum || playerLife == 0 || enemyLife == 0){
@@ -104,14 +105,15 @@ function setQuestion(state) {
               document.getElementById("Enemy").classList.add('kill');
               document.querySelector("#modalFin").querySelector('h2').innerHTML = "Bravo, Vous avez battu dark "+ enemyName +" !";
               document.querySelector("#modalFin").querySelector('p').innerHTML = "Vous avez débloqué une pièce de puzzle !";
-              document.querySelector("#modalFinWrapper").style.display = "flex";
             }else{
-                document.getElementById("Player").classList.add('kill');
+                if(playerLife==0){document.getElementById("Player").classList.add('kill');}
                 document.querySelector("#modalFin").querySelector('h2').innerHTML = "Dommage, vous n'avez pas réussi a battre dark "+ enemyName +" !";
                 document.querySelector("#modalFin").querySelector('p').innerHTML = "Retentez votre chance";
-                document.querySelector("#modalFinWrapper").style.display = "flex"
-            }
-            return;
+              }
+              setTimeout(() => {
+                document.querySelector("#modalFinWrapper").style.display = "flex";
+              }, 1000);
+              return;
           }
 
           answerHTML.innerHTML = "";
@@ -123,11 +125,12 @@ function setQuestion(state) {
               answerHTML.appendChild(element);
             });
           });
+          document.querySelector('#valider').disabled = false;
           break;
       }
       document
         .getElementById("valider")
-        .setAttribute("onclick", "checkAnswer(" + questionNum + ")");
+        .setAttribute("onclick", "this.disabled=true;checkAnswer(" + questionNum + ");");
     });
   });
 }
