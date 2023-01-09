@@ -29,17 +29,19 @@
     border-radius: 20px;
 }
 
-.td_avatar_container{
+.td_questions_container{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('../assets/questions/marketing.png');
+    background-size: 100% auto;
     font-size: 2em;
     font-weight: bolder;
     text-align: center;
     margin-top: 10%;
     width: 90%;
     height: 70%;
-    background: linear-gradient(180deg, rgba(231, 231, 231, 0) 0%, rgba(15, 15, 15, 0.12) 100%);
+    /* background: linear-gradient(180deg, rgba(231, 231, 231, 0) 0%, rgba(15, 15, 15, 0.12) 100%); */
     border-radius: 12px;
 }
 

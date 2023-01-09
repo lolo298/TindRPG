@@ -11,7 +11,8 @@ justify-content: initial;
     </div>
     <div class="td_card_container">
         <div class="td_card">
-            <div class="td_avatar_container">
+            <div class="td_questions_container">
+                <div class="td_questions_degrade"></div>
                 <div class="question">Tu aimes le marketing?</div>
             </div>
             <div class="td_action_buttons">
