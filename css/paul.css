@@ -24,6 +24,7 @@
     flex-direction: column;
     width: 80%;
     height: 80%;
+    margin-top: 20%;
     box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
 }
@@ -45,4 +46,26 @@
 .td_action_buttons{
     width: 100%;
     height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.td_button{
+    width: 69px;
+    height: 69px;
+    border-radius:100%;
+    box-shadow: 2px 3px 7px rgba(0, 0, 0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.td_like_button{
+    background: #DE0D67;
+}
+
+.td_button_img{
+    width: 50%;
+    height: 50%;
 }
