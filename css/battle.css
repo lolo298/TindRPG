@@ -1,0 +1,188 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#battle {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.sprite {
+    width: 120px;
+}
+
+.battleSprite {
+    height: 80px;
+}
+
+.mobInfo {
+    position: relative;
+}
+
+.lifeBar {
+    border-radius: 10px;
+    height: 9px;
+    width: 100px;
+    max-width: 93px;
+    /*0px - 45px - 90px*/
+    background-color: #74e3a0;
+    /* #da3327 - #f3dd5d - #74e3a0 */
+    position: absolute;
+}
+
+#PlayerLife {
+    top: 36px;
+    left: 93px;
+}
+
+#EnemyLife {
+    top: 44px;
+    left: 79px;
+}
+
+.lifeBack {
+    border-radius: 10px;
+    height: 9px;
+    width: 100px;
+    max-width: 93px;
+    position: absolute;
+    background-color: #444f50;
+}
+
+.LifeBackPlayer {
+    top: 36px;
+    left: 93px;
+}
+
+.LifeBackDark {
+    top: 44px;
+    left: 79px;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    width: 80%;
+    z-index: 0;
+    background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
+}
+
+.formWrapper::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    z-index: -1;
+    background-color: #fff;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.questionWrapper {
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3% 20%;
+    font-size: 1.1em;
+    z-index: 0;
+    border: 1px solid transparent;
+    background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
+}
+
+.questionWrapper::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.question {
+    text-align: center;
+    z-index: 1;
+}
+
+#Reponses {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.reponse {
+    display: none;
+}
+
+.reponseCheck {
+    margin: 5px;
+    text-align: center;
+    width: 100px;
+    padding: 10% 80%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px #000000;
+}
+
+.reponseCheck:hover {
+    background-color: #f3dd5d;
+}
+
+#reponse1:checked~#reponseCheck1,
+#reponse2:checked~#reponseCheck2,
+#reponse3:checked~#reponseCheck3 {
+    background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
+}
+
+#valider {
+    border: unset;
+    background-color: unset;
+}
