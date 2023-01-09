@@ -14,4 +14,8 @@ function get_prof_by_id($id){
     }
     return $pid;
 }
+function list_all_questions(){
+    $file_content = file_get_contents($GLOBALS["prefix_path"]."questions.json");
+    return json_decode($file_content, true);
+}
 ?>
