@@ -1,0 +1,34 @@
+{
+    "0": {
+      "nom": "Pierre BUENO",
+      "img": "assets/profs/front/Pierre.png"
+    },
+    "1": {
+        "nom": "Baptiste Vrigneau",
+        "img": "assets/profs/front/Baptiste.png"
+    },
+    "2": {
+        "nom": "Bensoit DEGONNE",
+        "img": "assets/profs/front/Benoist.png"
+    },
+    "3": {
+        "nom": "Corrine SCHUCHARD",
+        "img": "assets/profs/front/Corrine.png"
+    },
+    "4": {
+        "nom": "Alexandre PICOGNA",
+        "img": "assets/profs/front/Alexandre.png"
+    },
+    "5": {
+        "nom": "Flora  NATIVEL",
+        "img": "assets/profs/front/Flora.png"
+    },
+    "6": {
+        "nom": "Grégoire CLIQUET",
+        "img": "assets/profs/front/Grergoire.png"
+    },
+    "7": {
+        "nom": "Sophie MARCHAND",
+        "img": "assets/profs/front/Sophie.png"
+    }
+  }

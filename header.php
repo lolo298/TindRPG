@@ -9,3 +9,8 @@
     <link rel="stylesheet" href="./css/paul.css">
     <title>TindRPG</title>
 </head>
+<?php
+
+include_once('api/api.php');
+
+?>
