@@ -11,7 +11,7 @@
     <link rel="stylesheet" href=".css/global.css">
     <link rel="stylesheet" href=".css/components.css">
     <?php
-        $own_style_path = "style/" . $file_name . ".css";
+        $own_style_path = "css/" . $file_name . ".css";
         if(file_exists($own_style_path)) echo "<link rel='stylesheet' href='$own_style_path'>";
     ?>
     <title>TindRPG</title>
