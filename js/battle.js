@@ -1,118 +1,65 @@
 playerLife = 2;
 enemyLife = 2;
-function endTurn(type) {
-  if (type == "player") {
-    setLife(document.querySelector("#num").value, document.getElementById("PlayerLife"), "player");
-  } else if (type == "enemy") {
-    setLife(document.querySelector("#num").value, document.getElementById("EnemyLife"), "enemy");
-  }
-}
+goodAnswers = [];
+questionNum = 0;
+questionRef = db.collection("Questions").where("ennemi", "==", enemyName);
+id = getCookie("id");
+starterRef = db.collection("Profs").doc(id);
+starterRef.get().then((doc) => {
+  console.log(doc);
+  data = doc.data();
+  document.getElementById("modalFin").querySelector('img').src = "./assets/profs/front/" + data.Nom + ".png";
+  document.getElementById("modalFin").querySelector('img').alt = data.Nom;
+  let player = document.getElementById("Player");
+  player.querySelector("#PlayerSprite").querySelector("img").src = "./assets/profs/back/" + data.Nom + ".png";
+  player.querySelector("#PlayerSprite").querySelector("img").alt = data.Nom;
+  player.querySelector(".mobInfo").querySelector('img').src = "./assets/battle/profs/" + data.Nom + ".png"
+  setQuestion("first");
+});
 
-async function setLife(state, lifeBar, type) {
-  let delayVal = 50;
-  switch (state) {
-    case "2":
-      if (type == "player") {
-        if (playerLife == 1) {
-          for (let i = 45; i <= 93; i++) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        } else if (playerLife == 0) {
-          for (let i = 0; i <= 93; i++) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        }
-        playerLife = 2;
-      } else if (type == "enemy") {
-        if (enemyLife == 1) {
-          for (let i = 45; i <= 93; i++) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        } else if (enemyLife == 0) {
-          for (let i = 0; i <= 93; i++) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        }
-        enemyLife = 2;
+async function setLife(state) {
+  delayVal = 30;
+  enemyLifeBar = document.getElementById("EnemyLife");
+  if (state) {
+    console.log("enemy");
+    enemyLife--;
+    if (enemyLife == 1) {
+      console.log("mid");
+      for (let i = 93; i >= 45; i--) {
+        enemyLifeBar.style.maxWidth = i + "px";
+        lifeBarColor(i, enemyLifeBar);
+        await delay(delayVal);
       }
-      break;
-    case "1":
-      if (type == "player") {
-        if (playerLife == 2) {
-          for (let i = 93; i >= 45; i--) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        } else if (playerLife == 0) {
-          for (let i = 0; i <= 45; i++) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        }
-        playerLife = 1;
-      } else if (type == "enemy") {
-        if (enemyLife == 2) {
-          for (let i = 93; i >= 45; i--) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        } else if (enemyLife == 0) {
-          for (let i = 0; i <= 45; i++) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        }
-        enemyLife = 1;
+    } else if (enemyLife == 0) {
+      console.log("KO");
+      for (let i = 45; i >= 0; i--) {
+        enemyLifeBar.style.maxWidth = i + "px";
+        lifeBarColor(i, enemyLifeBar);
+        await delay(delayVal);
       }
-      break;
-    case "0":
-      if (type == "player") {
-        if (playerLife == 2) {
-          for (let i = 93; i >= 0; i--) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        } else if (playerLife == 1) {
-          for (let i = 45; i >= 0; i--) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        }
-        playerLife = 0;
-      } else if (type == "enemy") {
-        if (enemyLife == 2) {
-          for (let i = 93; i >= 0; i--) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        } else if (enemyLife == 1) {
-          for (let i = 45; i >= 0; i--) {
-            lifeBar.style.maxWidth = i + "px";
-            lifeBarColor(i, lifeBar);
-            await delay(delayVal);
-          }
-        }
-        enemyLife = 0;
+    }
+  } else {
+    console.log("player");
+    playerLifeBar = document.getElementById("PlayerLife");
+    playerLife--;
+    if (playerLife == 1) {
+      console.log("mid");
+      for (let i = 93; i >= 45; i--) {
+        playerLifeBar.style.maxWidth = i + "px";
+        lifeBarColor(i, playerLifeBar);
+        await delay(delayVal);
       }
-      break;
+    } else if (playerLife == 0) {
+      console.log("KO");
+      for (let i = 45; i >= 0; i--) {
+        playerLifeBar.style.maxWidth = i + "px";
+        lifeBarColor(i, playerLifeBar);
+        await delay(delayVal);
+      }
+    }
   }
+  return false;
 }
-
 function lifeBarColor(val, target) {
   if (val >= 46) {
     target.style.backgroundColor = "#74e3a0";
@@ -125,4 +72,116 @@ function lifeBarColor(val, target) {
 
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function setQuestion(state) {
+  questionRef.get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      data = doc.data();
+      let questions = data.questions;
+      questionNum++;
+
+      Object.entries(questions).forEach((question) => {
+        goodAnswers[question[0][8] - 1] = question[1].reponse;
+      });
+      let questionHTML = document.querySelector(".question");
+      let answerHTML = document.getElementById("Reponses");
+      switch (state) {
+        case "first":
+          questionHTML.innerHTML = questions.question1.question;
+          questions.question1.reponses.forEach((reponse, key) => {
+            let answers = createAnswer(reponse, key + 1);
+
+            answers.forEach((element) => {
+              answerHTML.appendChild(element);
+            });
+          });
+          break;
+        case "next":
+          if( Object.keys(questions).length < questionNum || playerLife == 0 || enemyLife == 0){
+            console.log("fini");
+            if(enemyLife == 0 && playerLife != 0){
+              document.getElementById("Enemy").classList.add('kill');
+              document.querySelector("#modalFin").querySelector('h2').innerHTML = "Bravo, Vous avez battu dark "+ enemyName +" !";
+              document.querySelector("#modalFin").querySelector('p').innerHTML = "Vous avez débloqué une pièce de puzzle !";
+              document.querySelector("#modalFinWrapper").style.display = "flex";
+            }else{
+                document.getElementById("Player").classList.add('kill');
+                document.querySelector("#modalFin").querySelector('h2').innerHTML = "Dommage, vous n'avez pas réussi a battre dark "+ enemyName +" !";
+                document.querySelector("#modalFin").querySelector('p').innerHTML = "Retentez votre chance";
+                document.querySelector("#modalFinWrapper").style.display = "flex"
+            }
+            return;
+          }
+
+          answerHTML.innerHTML = "";
+          questionHTML.innerHTML = questions["question"+questionNum].question;
+          questions["question"+questionNum].reponses.forEach((reponse, key) => {
+            let answers = createAnswer(reponse, key + 1);
+
+            answers.forEach((element) => {
+              answerHTML.appendChild(element);
+            });
+          });
+          break;
+      }
+      document
+        .getElementById("valider")
+        .setAttribute("onclick", "checkAnswer(" + questionNum + ")");
+    });
+  });
+}
+
+function createAnswer(answer, id) {
+  let input = document.createElement("input");
+  input.type = "radio";
+  input.name = "reponse";
+  input.id = "reponse" + id;
+  input.className = "reponse";
+  input.value = answer;
+  let label = document.createElement("label");
+  label.setAttribute("for", "reponse" + id);
+  label.className = "reponseCheck";
+  label.id = "reponseCheck" + id;
+  label.innerHTML = answer;
+
+  return [input, label];
+}
+
+function checkAnswer(num) {
+  let checkedAnswer = document.querySelector('input[name="reponse"]:checked');
+  let labelAnswer = document.getElementById("reponseCheck" + checkedAnswer.id[7]);
+  let answer = checkedAnswer.value;
+  questionRef.get().then((querySnapshot) => {
+    querySnapshot.forEach(async (doc) => {
+      data = doc.data();
+      console.log("answer:", answer);
+      console.log("good:", goodAnswers[num - 1]);
+      if (goodAnswers[num - 1] == answer) {
+        console.log("bonne reponse");
+        labelAnswer.classList.add("goodAnswer");
+        let allCheckbox = document.querySelectorAll(".reponse");
+        allCheckbox.forEach((checkbox) => {
+          checkbox.setAttribute("disabled", "disabled");
+        });
+        await setLife(true);
+        setQuestion("next");
+      } else {
+        console.log("mauvaise reponse");
+        let allCheckbox = document.querySelectorAll(".reponse");
+        labelAnswer.classList.add("badAnswer");
+        allCheckbox.forEach((checkbox) => {
+          checkbox.setAttribute("disabled", "disabled");
+        });
+        await setLife(false);
+        setQuestion("next");
+      }
+    });
+  });
+}
+
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift().replaceAll(' ','');
 }
