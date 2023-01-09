@@ -24,25 +24,50 @@
     flex-direction: column;
     width: 80%;
     height: 80%;
+    margin-top: 20%;
     box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
 }
 
-.td_avatar_container{
+.td_questions_container{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url('../assets/questions/marketing.png');
+    background-size: 100% auto;
     font-size: 2em;
     font-weight: bolder;
     text-align: center;
     margin-top: 10%;
     width: 90%;
     height: 70%;
-    background: linear-gradient(180deg, rgba(231, 231, 231, 0) 0%, rgba(15, 15, 15, 0.12) 100%);
+    /* background: linear-gradient(180deg, rgba(231, 231, 231, 0) 0%, rgba(15, 15, 15, 0.12) 100%); */
     border-radius: 12px;
 }
 
 .td_action_buttons{
     width: 100%;
     height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.td_button{
+    width: 69px;
+    height: 69px;
+    border-radius:100%;
+    box-shadow: 2px 3px 7px rgba(0, 0, 0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.td_like_button{
+    background: #DE0D67;
+}
+
+.td_button_img{
+    width: 50%;
+    height: 50%;
 }
