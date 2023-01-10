@@ -5,8 +5,12 @@ include_once('header.php');
 <body style="
 justify-content: initial;
 ">
-    <?php component("components/logo.php") ?>
-    <div class="td_card_container">
+    <div class="td_tutorial">
+        <p>Trouvez votre professeur totem en répondant aux questions suivantes !</p>
+        <button id="td_tutorial_act" class="btn blanc">Suivant</button>
+    </div>
+            <?php component("components/logo.php") ?>
+        <div class="td_blur td_card_container">
         <?php
         $questions = list_all_questions();
         foreach($questions as $key=>$value) {?>
@@ -53,13 +57,18 @@ justify-content: initial;
     const tx = 150
     const ty = 20
     let result = ""
-    
+
+    document.querySelector("#td_tutorial_act").addEventListener('click',function(){
+        document.querySelector(".td_tutorial").style.display = 'none'
+        document.querySelectorAll(".td_blur").forEach(element => {
+            element.classList.remove("td_blur")
+    })
+    })
+
     function add_result(data){
         result += data
-        console.log(result)
         if(result.length == 4){
             location.href = "tinder_result.php?pid="+answ_to_prof[parseInt(result, 2)];
-            console.log()
         }
     }
     
