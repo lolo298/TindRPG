@@ -1,5 +1,11 @@
 <?php
     session_start();
+    if(!isset($_SESSION['mmiquest'])){
+        $_SESSION['mmiquest'] = [
+            'nbr_pieces' => 0,
+            'prof_id' => 0
+        ];
+    };
     include_once('functions.php');
     include_once('api/api.php');
     $file_name = basename($_SERVER["SCRIPT_FILENAME"], '.php');
