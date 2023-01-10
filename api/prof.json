@@ -3,48 +3,56 @@
       "nom": "Pierre BUENO",
       "spe": "le design",
       "img": "assets/profs/front/Pierre.png",
-      "fbId": "NZtuWHKE26USEWbkdrmy"
+      "fbId": "NZtuWHKE26USEWbkdrmy",
+      "resp": "Responsable Design"
     },
     "1": {
         "nom": "Baptiste Vrigneau",
         "spe": "de développement",
         "img": "assets/profs/front/Baptiste.png",
-        "fbId": "szFrKLVEmfjQPnblzvFJ"
+        "fbId": "szFrKLVEmfjQPnblzvFJ",
+        "resp": "Responsable Sciences"
     },
     "2": {
         "nom": "Benoist DEGONNE",
         "spe": "l'audiovisuel",
         "img": "assets/profs/front/Benoist.png",
-        "fbId": "BL8njhrcH1dBVyRMvcYy"
+        "fbId": "BL8njhrcH1dBVyRMvcYy",
+        "resp": "Responsable Audiovisuel"
     },
     "3": {
         "nom": "Corrine SCHUCHARD",
         "spe": "le marketing",
         "img": "assets/profs/front/Corinne.png",
-        "fbId": "mhZD2UGTHUXRQcWCizRJ"
+        "fbId": "mhZD2UGTHUXRQcWCizRJ",
+        "resp": "Responsable Marketting"
     },
     "4": {
         "nom": "Alexandre PICOGNA",
         "spe": "le développement",
         "img": "assets/profs/front/Alexandre.png",
-        "fbId": "nyLiifx6EGixCXw3UHBU"
+        "fbId": "nyLiifx6EGixCXw3UHBU",
+        "resp": "Responsable Développement"
     },
     "5": {
         "nom": "Flora  NATIVEL",
         "spe": "la communication",
         "img": "assets/profs/front/Flora.png",
-        "fbId": "h5QqBJeyhx5Tg5Xs9T4d"
+        "fbId": "h5QqBJeyhx5Tg5Xs9T4d",
+        "resp": "Responsable Communication"
     },
     "6": {
         "nom": "Grégoire CLIQUET",
         "spe": "le design",
         "img": "assets/profs/front/Gregoire.png",
-        "fbId": "wBT6EwMZR7AlcmR0yZqc"
+        "fbId": "wBT6EwMZR7AlcmR0yZqc",
+        "resp": "Responsable Design d'expérience"
     },
     "7": {
         "nom": "Sophie MARCHAND",
         "spe": "le marketing",
         "img": "assets/profs/front/Sophie.png",
-        "fbId": "1K3HCKhOadVqjETRF8Hr"
+        "fbId": "1K3HCKhOadVqjETRF8Hr",
+        "resp": "Responsable Marketing"
     }
   }

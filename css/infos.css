@@ -55,7 +55,7 @@ body{
     justify-content: center;
     width: 90%;
     margin-top: 7%;
-    height: 70%;
+    height: 80%;
     overflow: scroll;
 }
 
@@ -70,6 +70,8 @@ body{
     height: fit-content;
     margin: 0 5px 0 5px;
     padding: 10px;
+    margin-bottom: 20px;
+    height: 33%;
 }
 
 .prof_card_avatar{
@@ -90,13 +92,99 @@ body{
 }
 
 .prof_card_overlay{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
     transform: translateY(200%);
-    height: 50vh;
+    height: 80vh;
     width: 100%;
     background-color: white;
     transition: 0.3s;
 }
 
-#td_0{
+.porf_overlay_top{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 90%;
+}
+
+.close_po.btn{
+    padding: 5px;
+    font-size: 2em;
+    border-radius: 100%;
+    width: 30px;
+    border-color: white;
+    background: transparent;
+    border-color: white;
+}
+.in_button_img{
+    width: 150%;
+    height: auto;
+}
+
+.avatar_to_photo{
+    width: 40%;
+    height: auto ;
+    border-radius: 5%;
+    max-height: 20vh;
+    max-width: 20vh;
+
+}
+
+.prof_card_overlay .prof_card_name{
+    color: black;
+    font-size: 1.7em;
+    margin-top: 2vh;
+}
+
+.prof_card_overlay .prof_card_desc{
+    color: black;
+    font-size: 1em;
+    margin-top: 2vh;
+}
+
+.overlay_coord_container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 1vh;
+    width: 80%;
+    height: 100%;
+}
+
+.overlay_coord_container button{
+    position: absolute;
+    width: 80%;
+}
+.coord_infos{
+    width: 80%;
+    border-radius: 0 25% 0 0;
+    background-color: #FBD5DA;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15%;
+}
+
+.where {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    padding: 6px 16px 6px 16px;
+    color: #FF6C6C;
+}
+
+.mail{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: underline;
+    padding: 6px 16px 6px 16px;
+
+}
+.mail span{
+    text-decoration-line: none;
+    font-size: 22px;
 }
