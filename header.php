@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if(!isset($_SESSION['mmiquest'])){
+    if(!isset($_SESSION['mmiquest']) || isset($_GET["reset"])){
         $_SESSION['mmiquest'] = [
-            'nbr_pieces' => 2,
+            'nbr_pieces' => 3,
             'prof_id' => 0
         ];
     };
@@ -32,4 +32,4 @@
     ?>
     <title>TindRPG</title>
 </head>
-<a href=""></a>
+<a style="position: absolute; top: 0; left: 0;" href="<?= $file_name ?>.php?reset=">reset session</a>
