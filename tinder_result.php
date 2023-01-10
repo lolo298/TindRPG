@@ -12,6 +12,7 @@ justify-content: initial;
         <img class="td_applogo" src="./assets/Logo.png" alt="TindRPG">
         <h2 class="td_logotitle">TindRPG</h2>
     </div>
+    <?php component("components/logo.php") ?>
     <div class="td_dialog">
         <img class="td_avatar" src="<?php echo(get_prof_by_id($_GET['pid'])['img'])?>" alt="<?php echo(get_prof_by_id($_GET['pid'])['nom'])?>">
         <div class="bubble">
