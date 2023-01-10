@@ -1,4 +1,9 @@
 <?php include_once('header.php') ?>
+<?php 
+$enemyName = "Baptiste";
+setcookie("id", "NZtuWHKE26USEWbkdrmy");
+ ?>
+
   <body>
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
     <!-- Add Firebase products that you want to use -->
@@ -20,26 +25,21 @@
       var db = firebase.firestore();
     </script>
     <script>
-      enemyName = "Baptiste";
+      enemyName = '<?= $enemyName ?>';
     </script>
 
     <div id="modalFinWrapper">
       <div id="modalFin">
-        <img src="./assets/profs/front/Pierre.png" alt="Pierre Bueno" />
+        <img src="" alt="" />
         <h2></h2>
         <p></p>
-        <a class="btnFin" href="./carte.php">Retour a la carte</a>
+        <a class="btnFin btn" href="./carte.php">Retour a la carte</a>
       </div>
     </div>
-    <header>
-      <a id="retour" href="./carte.php">
-        <img src="./assets/retour.png" alt="retour" />
-      </a>
-      <div class="title">
+      <div id="Title" class="title">
         <img src="./assets/Logo.png" alt="TindRPG" id="logo" />
         <h1>TindRPG</h1>
       </div>
-    </header>
     <div id="battle">
       <div id="Player" class="wrapper">
         <div id="PlayerSprite">
@@ -53,12 +53,12 @@
       </div>
       <div id="Enemy" class="wrapper">
         <div class="mobInfo">
-          <img src="./assets/battle/dark/Baptiste.png" alt="Player life" class="battleSprite" />
+          <img src="./assets/battle/dark/<?= $enemyName ?>.png" alt="Player life" class="battleSprite" />
           <div class="LifeBackDark lifeBack"></div>
           <div id="EnemyLife" class="lifeBar"></div>
         </div>
         <div id="EnemySprite">
-          <img src="./assets/profs/dark/Baptiste.png" alt="Dark Baptiste" class="sprite" />
+          <img src="./assets/profs/dark/<?= $enemyName ?>.png" alt="Dark <?= $enemyName ?>" class="sprite" />
         </div>
       </div>
     </div>
@@ -69,7 +69,11 @@
       </div>
       <form action="" id="Reponses"></form>
     </div>
-    <button id="valider" onclick="this.disable=true;checkAnswer();">Valider</button>
+    <div class="boutonSuite">
+    <div id="retour" class="btn" ><a href="./carte.php">Retour</a></div>
+    <button id="valider" class="btn" onclick="this.disable=true;checkAnswer();">Valider</button>
+  </div>
+    <script src="./js/global.js"></script>
     <script src="./js/battle.js"></script>
   </body>
 </html>

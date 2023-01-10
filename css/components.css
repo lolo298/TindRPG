@@ -7,10 +7,11 @@
     font-size: inherit;
     padding: 1rem 4rem;
     border-radius: 2rem;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
   }
 
   .btn.blanc{
@@ -30,6 +31,7 @@
 }
 
 .td_applogo{
+    padding-top:10%;
     height: 100%;
     width: auto;
     margin-right: 15px;
