@@ -1,34 +1,42 @@
 {
     "0": {
       "nom": "Pierre BUENO",
+      "spe": "le design",
       "img": "assets/profs/front/Pierre.png"
     },
     "1": {
         "nom": "Baptiste Vrigneau",
+        "spe": "de développement",
         "img": "assets/profs/front/Baptiste.png"
     },
     "2": {
-        "nom": "Bensoit DEGONNE",
+        "nom": "Benoist DEGONNE",
+        "spe": "l'audiovisuel",
         "img": "assets/profs/front/Benoist.png"
     },
     "3": {
         "nom": "Corrine SCHUCHARD",
+        "spe": "le marketing",
         "img": "assets/profs/front/Corinne.png"
     },
     "4": {
         "nom": "Alexandre PICOGNA",
+        "spe": "le développement",
         "img": "assets/profs/front/Alexandre.png"
     },
     "5": {
         "nom": "Flora  NATIVEL",
+        "spe": "la communication",
         "img": "assets/profs/front/Flora.png"
     },
     "6": {
         "nom": "Grégoire CLIQUET",
+        "spe": "le design",
         "img": "assets/profs/front/Gregoire.png"
     },
     "7": {
         "nom": "Sophie MARCHAND",
+        "spe": "le marketing",
         "img": "assets/profs/front/Sophie.png"
     }
   }
