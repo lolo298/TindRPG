@@ -10,8 +10,9 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
+    gap: 40px;
 }
 
 a {
@@ -31,6 +32,7 @@ button {
     align-items: center;
     position: absolute;
     top: 0;
+    z-index: 50;
 }
 
 #logo {
@@ -195,13 +197,7 @@ button {
 
 #valider,
 .btnFin {
-    font-size: 1.4em;
-    border: unset;
-    background-color: unset;
     background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
-    border-radius: 50px;
-    padding: 5% 20%;
-    color: white;
 }
 
 .goodAnswer {
@@ -255,3 +251,60 @@ button {
     width: 10%;
     margin: 10px;
 }
+
+.btn{
+    font-size: 1.4em;
+    border: unset;
+    background-color: unset;
+    border-radius: 50px;
+    padding: 5% 20%;
+    color: white;
+}
+
+#retour{
+    position: relative;
+    color: black;
+    border: 1px solid transparent;
+    background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
+    margin-right: 5%;
+}
+#retour::before{
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    background-color: #fff;
+    border-radius: 50px;
+    box-sizing: border-box;
+  }
+
+  .boutonSuite {
+    margin-bottom: 20px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .spinnerWrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    z-index: 40;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+    .spinner{
+        width: 100px;
+        height: 100px;
+    }
