@@ -1,18 +1,18 @@
 {
     "0": {
-      "quest": "Serais-tu attiré par l'Audiovisuel?",
+      "quest": "Es-tu attiré par l'Audiovisuel?",
       "img": "./assets/questions/aud.jpg"
     },
     "1": {
-        "quest": "Serais-tu attiré par le Design",
+        "quest": "Es-tu attiré par le Design",
         "img": "./assets/questions/des.jpg"
     },
     "2": {
-        "quest": "Serais-tu attiré par le Développement",
+        "quest": "Es-tu attiré par le Développement",
         "img": "./assets/questions/dev.png"
     },
     "3": {
-        "quest": "Serais-tu attiré par le Marketing",
+        "quest": "Es-tu attiré par le Marketing",
         "img": "./assets/questions/marketing.png"
     }
   }
