@@ -6,7 +6,8 @@ body {
     padding: 0;
     overflow: hidden;
 }
-*{
+
+* {
     box-sizing: unset !important;
 }
 
@@ -23,7 +24,17 @@ a {
     z-index: 5;
     text-decoration: none;
     cursor: pointer;
+    color: #FF6868;
 }
+
+h2 {
+    font-size: 2rem;
+}
+
+.btnEmpty:visited {
+        color: #FF6868;
+}
+
 button {
     cursor: pointer;
 }
@@ -143,7 +154,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3% 20%;
+    padding: 3% 0;
+    width: 100%;
     font-size: 1.1em;
     z-index: 0;
     border: 1px solid transparent;
@@ -182,7 +194,7 @@ button {
     margin: 5px;
     text-align: center;
     width: 100px;
-    padding: 10% 80%;
+    padding: 10% 60%;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 0px 5px 0px #000000;
@@ -226,19 +238,16 @@ button {
     display: none;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: white;
 }
 
 #modalFin {
-    background-color: white;
     width: 80%;
-    height: 150px;
+    height: 80%;
     padding: 5%;
-    border-radius: 40px;
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: relative;
     text-align: center;
@@ -246,21 +255,15 @@ button {
 
 #modalFin img {
     width: 50%;
-    position: absolute;
-    top: -60%;
 }
 
-#retour img {
-    width: 10%;
-    margin: 10px;
-}
-
-.btn{
+.btn {
     font-size: 1.4em;
     border: unset;
     background-color: unset;
     border-radius: 50px;
-    padding: 5% 20%;
+    width: 70%;
+    padding: 5% 10%;
     color: white;
 }
 
@@ -271,7 +274,18 @@ button {
     background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
     margin-right: 5%;
 }
-#retour::before{
+#retry {
+    position: relative;
+    color: black;
+    border: 1px solid transparent;
+    background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
+}
+
+.btnEmpty{
+    color: #FF6868;
+}
+
+.btnEmpty::before{
     content: "";
     position: absolute;
     top: 1px;
@@ -281,18 +295,18 @@ button {
     background-color: #fff;
     border-radius: 50px;
     box-sizing: border-box;
-  }
+}
 
-  .boutonSuite {
+.boutonSuite {
     margin-bottom: 20px;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
-  }
+}
 
-  .spinnerWrapper{
+.spinnerWrapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -305,9 +319,9 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-    .spinner{
-        width: 100px;
-        height: 100px;
-    }
+.spinner {
+    width: 100px;
+    height: 100px;
+}

@@ -18,8 +18,7 @@ questionRef.get().then((querySnapshot) => {
     console.log(questionQte);
   });
 });
-id = getCookie("id");
-starterRef = db.collection("Profs").doc(id);
+starterRef = db.collection("Profs").doc(fbId);
 
 starterRef.get().then((doc) => {
   data = doc.data();
@@ -58,7 +57,8 @@ starterRef.get().then((doc) => {
 });
 
 async function setLife(state) {
-  let delayVal = 50;
+  // let delayVal = 50;
+  let delayVal = 5;
   if (state) {
     enemyLifeBar = document.getElementById("EnemyLife");
     if (questionQte == 2) {
@@ -159,12 +159,14 @@ async function setQuestion(state) {
              console.log("fini");
              console.log(playerLife);
               console.log(enemyLife);
+              modalFin = document.querySelector("#modalFin");
             if (enemyLife == 0 && playerLife != 0) {
               document.getElementById("Enemy").classList.add("kill");
-              document.querySelector("#modalFin").querySelector("h2").innerHTML =
+              modalFin.querySelector("h2").innerHTML =
                 "Bravo, Vous avez battu dark " + enemyName + " !";
-              document.querySelector("#modalFin").querySelector("p").innerHTML =
+                modalFin.querySelector("p").innerHTML =
                 "Vous avez débloqué une pièce de puzzle !";
+                modalFin.querySelector("#retry").style.display = "none";
             } else {
               if (playerLife == 0) {
                 document.getElementById("Player").classList.add("kill");
@@ -172,7 +174,7 @@ async function setQuestion(state) {
               document.querySelector("#modalFin").querySelector("h2").innerHTML =
                 "Dommage, vous n'avez pas réussi a battre dark " + enemyName + " !";
               document.querySelector("#modalFin").querySelector("p").innerHTML =
-                "Retentez votre chance";
+                "Demande des renseignements aux élèves / professeurs et retente ta chance !";
             }
             setTimeout(() => {
               document.querySelector("#modalFinWrapper").style.display = "flex";
@@ -246,10 +248,4 @@ function checkAnswer(num) {
       }
     });
   });
-}
-
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(";").shift().replaceAll(" ", "");
 }

@@ -8,10 +8,6 @@ justify-content: initial;
 <p class="td_text" style="display: none;">Je vois que tu aime <?php echo(get_prof_by_id($_GET['pid'])['spe'])?></p>
 <p class="pid" style="display: none;"><?php echo($_GET['pid'])?></p>
 
-<div class="td_toplogo">
-        <img class="td_applogo" src="./assets/Logo.png" alt="TindRPG">
-        <h2 class="td_logotitle">TindRPG</h2>
-    </div>
     <?php component("components/logo.php") ?>
     <div class="td_dialog">
         <img class="td_avatar" src="<?php echo(get_prof_by_id($_GET['pid'])['img'])?>" alt="<?php echo(get_prof_by_id($_GET['pid'])['nom'])?>">
@@ -44,7 +40,9 @@ justify-content: initial;
         }
         else if(dg_count==3){
             console.log('slt')
-            location.href = "save_prof.php?pid="+document.querySelector('#pid').innerHTML;
+            URL = new URL(document.location);
+            profId = URL.searchParams.get('pid')
+            location.href = "save_prof.php?pid="+ profId;
         }
         dg_count++
     }
