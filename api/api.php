@@ -9,7 +9,8 @@ function get_prof_by_id($id){
     else {
         $pid = array(
             "nom" => "unknown_id",
-            "img" => 0
+            "img" => 0,
+            "fbId" => 0
         );
     }
     return $pid;

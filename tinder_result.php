@@ -38,7 +38,8 @@ justify-content: initial;
             document.querySelector(".close_td").style.display = 'flex'
         }
         else if(dg_count==3){
-            location.href = "save_prof.php?pid="+ document.querySelector('.pid').innerHTML;
+            console.log('slt')
+            location.href = "save_prof.php?pid="+ <?= $_GET['pid'] ?>;
         }
         dg_count++
     }
