@@ -18,9 +18,5 @@ body {
 #textStart {
     margin: 0 10%;
     font-size: 20px;
-}
-
-#boutonDebut {
-    background-color: #DE0D67;
-    border-radius: 20px;
+    text-align: center;
 }
