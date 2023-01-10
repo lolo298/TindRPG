@@ -1,0 +1,47 @@
+
+.td_dialog{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 75%;
+}
+
+.td_avatar{
+    width: 70%;
+    height: auto;
+}
+
+.td_text_dialog{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 12% ;
+    padding-top: 24% ;
+
+    height: 100%;
+    font-weight: 600;
+    font-family: 'Jost';
+    font-size: 7vw;
+}
+.td_avatar_dialog{
+    background: url('../assets/questions/bulle.png');
+    background-size: 100% 100%;
+    background-position: 50% 50%;
+    width: 60%;
+    height: 30%;
+}
+
+.td_avatar_dialog img{
+    width: 100%;
+}
+
+.td_avatar_act_button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+}

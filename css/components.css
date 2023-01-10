@@ -3,10 +3,12 @@
     align-items: center;
     justify-content: center;
     padding: 1% 0 1% 0;
+    height: 10%;
+
 }
 
 .td_applogo{
-    height: 55px;
+    height: 100%;
     width: auto;
     margin-right: 15px;
 }
