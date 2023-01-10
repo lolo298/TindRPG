@@ -1,6 +1,6 @@
 <?php
 include_once('header.php');
-$reponse = false;
+$reponse = true;
 $nbr_pieces = $_SESSION['mmiquest']['nbr_pieces'];
 ?>
 

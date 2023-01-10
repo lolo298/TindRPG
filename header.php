@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['mmiquest'])){
         $_SESSION['mmiquest'] = [
-            'nbr_pieces' => 0,
+            'nbr_pieces' => 2,
             'prof_id' => 0
         ];
     };
@@ -32,3 +32,4 @@
     ?>
     <title>TindRPG</title>
 </head>
+<a href=""></a>

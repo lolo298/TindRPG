@@ -18,6 +18,9 @@ main{
   height: 80vw;
   position: relative;
   margin-bottom: 4rem;
+  background-image: url('../assets/puzzle_placeholder.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .puzzle-container img{
