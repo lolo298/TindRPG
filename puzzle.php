@@ -10,7 +10,7 @@ $finis = $nbr_pieces === 5
           <img src="assets/puzzle/puzzle_<?= $i + 1 ?>.png" alt="">
         <?php endfor ?>
       </div>
-      <button <?= $finis ? "class='unlocked'" : '' ?>><p>Ma récompense</p><img src="assets/lock.svg" alt="Cadenas"></button>
+      <button class="btn<?= $finis ? ' unlocked' : '' ?>"><p>Ma récompense</p><img src="assets/lock.svg" alt="Cadenas"></button>
     </main>
     <?= $finis ? "<script src='js/puzzle.js'></script>" : '' ?>
   <body>
