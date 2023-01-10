@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include_once('functions.php');
     include_once('api/api.php');
     $file_name = basename($_SERVER["SCRIPT_FILENAME"], '.php');
     $own_style_path = "css/" . $file_name . ".css";

@@ -5,10 +5,7 @@ include_once('header.php');
 <body style="
 justify-content: initial;
 ">
-    <div class="td_toplogo">
-        <img class="td_applogo" src="./assets/Logo.png" alt="TindRPG">
-        <h2 class="td_logotitle">TindRPG</h2>
-    </div>
+    <?php component("components/logo.php") ?>
     <div class="td_card_container">
         <?php
         $questions = list_all_questions();

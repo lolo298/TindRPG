@@ -1,19 +1,6 @@
 :root{
   --rouge: #FF6868;
-}
-
-.btn{
-  background-color: var(--rouge);
-  color: white;
-  border: none;
-  outline: none;
-  font-family: inherit;
-  font-size: inherit;
-  padding: 0.75rem 1.5em;
-  border-radius: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  --white: #f5f5f5;
 }
 
 *{
@@ -27,5 +14,5 @@ html, body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   color: #333;
-  background: #f5f5f5;
+  background: var(--white);
 }

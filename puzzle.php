@@ -4,6 +4,8 @@ $nbr_pieces = 3;
 $finis = $nbr_pieces === 5
 ?>
   <body>
+  <?php component("components/logo.php") ?>
+
     <main>
       <div class="puzzle-container">
         <?php for($i = 0; $i < $nbr_pieces ; $i++): ?>
