@@ -42,7 +42,7 @@ main{
   transform: translate(-50%, -50%);
   width: 65.3%;
 }
-
+/* 
 button{
   width: 100%;
   border: none;
@@ -56,7 +56,7 @@ button{
   justify-content: center;
   font-size: 1.25rem;
   opacity: 0.5;
-}
+} */
 
 button img{
   height: 1.25em;

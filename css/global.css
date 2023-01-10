@@ -1,3 +1,21 @@
+:root{
+  --rouge: #FF6868;
+}
+
+.btn{
+  background-color: var(--rouge);
+  color: white;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.75rem 1.5em;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 *{
   margin: 0;
   padding: 0;
