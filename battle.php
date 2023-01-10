@@ -1,4 +1,9 @@
 <?php include_once('header.php') ?>
+<?php 
+$enemyName = "Baptiste";
+setcookie("id", "NZtuWHKE26USEWbkdrmy");
+ ?>
+
   <body>
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
     <!-- Add Firebase products that you want to use -->
