@@ -6,6 +6,9 @@ body {
     padding: 0;
     overflow: hidden;
 }
+*{
+    box-sizing: unset !important;
+}
 
 body {
     display: flex;
