@@ -1,6 +1,6 @@
 <?php
 include_once('header.php');
-$nbr_pieces = 3;
+$nbr_pieces = $_SESSION['mmiquest']['nbr_pieces'];
 ?>
   <body>
   <?php component("components/logo.php") ?>
