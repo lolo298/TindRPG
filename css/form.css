@@ -67,7 +67,7 @@ main {
     padding-bottom: 6px;
     font-weight: 700;
     border-width: 3px;
-    border-color: var(--rouge);
+    border-color: #980DFF;
   }
 
   .form__field:focus ~ .form__label {
@@ -76,7 +76,7 @@ main {
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: var(--rouge);
+    color: #980DFF;
     font-weight: 700;
   }
   

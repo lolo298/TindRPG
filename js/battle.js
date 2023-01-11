@@ -5,10 +5,26 @@ goodAnswers = [];
 let Load = [];
 questionNum = 0;
 questionQte = 0;
-
+let completeRooms = {};
+let userRef = db.collection("Users").doc(sessionStorage.getItem("id"));
 setup();
 async function setup() {
   console.log("setup");
+
+  await userRef.get().then((doc) => {
+    data = doc.data();
+    completeRooms = data.salles;
+    if(completeRooms[roomId]){
+      document.querySelector("#modalFin").querySelector("h2").innerHTML =
+      "Vous avez déja compléter cette salle !";
+      document.querySelector("#modalFin").querySelector("p").innerHTML =
+      "Vous pouvez retourner à la carte pour en choisir une autre !";
+      document.querySelector("#modalFinWrapper").querySelector("#retry").style.display = "none";
+      document.querySelector("#modalFinWrapper").style.display = "flex";
+    }
+  });
+
+
   starterRef = db.collection("Profs").doc(fbId);
 
   await starterRef.get().then((doc) => {
@@ -67,7 +83,7 @@ async function setup() {
         Enemy.querySelector(".mobInfo").querySelector("img").onerror = reject;
       })
     );
-    Load.push(setQuestionV2("first"));
+    Load.push(setQuestion("first"));
     return true;
   });
 
@@ -77,6 +93,11 @@ async function setup() {
   });
 }
 
+/**
+*Permet de reduire les points de vie de l'ennemi ou de notre personnage
+*@param {boolean} state true = ennemi false = joueur
+*@async
+*/
 async function setLife(state) {
   // let delayVal = 50;
   let delayVal = 5;
@@ -137,6 +158,11 @@ async function setLife(state) {
   }
 }
 
+/**
+*Verifie quelle couleur doit etre appliquée a la barre de vie
+*@param {number} val nombre de point de vie
+*@param {HTMLElement} target element html de la barre de vie
+*/
 function lifeBarColor(val, target) {
   if (val >= 46) {
     target.style.backgroundColor = "#74e3a0";
@@ -147,90 +173,20 @@ function lifeBarColor(val, target) {
   }
 }
 
+/**
+*Permet de mettre en pause le code
+*@param {number} ms temps en milliseconde
+*/
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function setQuestion(state) {
-  questionRef = db.collection("Questions").where("ennemi", "==", enemyName);
-  questionRef.get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      data = doc.data();
-      let questions = data.questions;
-      console.log(questions);
-      questionNum++;
-      let questionHTML = document.querySelector(".question");
-      let answerHTML = document.getElementById("Reponses");
-      switch (state) {
-        case "first":
-          Object.entries(questions).forEach((question) => {
-            questionQte++;
-          });
-          enemyLife = playerLife = questionQte;
-
-          Object.entries(questions).forEach((question) => {
-            goodAnswers[question[0][8] - 1] = question[1].reponse;
-          });
-          questionHTML.innerHTML = questions.question1.question;
-          questions.question1.reponses.forEach((reponse, key) => {
-            let answers = createAnswer(reponse, key + 1);
-
-            answers.forEach((element) => {
-              answerHTML.appendChild(element);
-            });
-          });
-          document.querySelector("#valider").disabled = false;
-          console.log(enemyLife);
-          break;
-        case "next":
-          if (questionQte < questionNum || playerLife == 0 || enemyLife == 0) {
-            console.log("fini");
-            console.log("PL:", playerLife);
-            console.log("EL:", enemyLife);
-            modalFin = document.querySelector("#modalFin");
-            if (enemyLife == 0 && playerLife != 0) {
-              document.getElementById("Enemy").classList.add("kill");
-              modalFin.querySelector("h2").innerHTML =
-                "Bravo, Vous avez battu dark " + enemyName + " !";
-              modalFin.querySelector("p").innerHTML = "Vous avez débloqué une pièce de puzzle !";
-              modalFin.querySelector("#retry").style.display = "none";
-            } else {
-              if (playerLife == 0) {
-                document.getElementById("Player").classList.add("kill");
-              }
-              document.querySelector("#modalFin").querySelector("h2").innerHTML =
-                "Dommage, vous n'avez pas réussi a battre dark " + enemyName + " !";
-              document.querySelector("#modalFin").querySelector("p").innerHTML =
-                "Demande des renseignements aux élèves / professeurs et retente ta chance !";
-            }
-            setTimeout(() => {
-              document.querySelector("#modalFinWrapper").style.display = "flex";
-            }, 1000);
-            return;
-          }
-
-          answerHTML.innerHTML = "";
-          questionHTML.innerHTML = questions["question" + questionNum].question;
-          questions["question" + questionNum].reponses.forEach((reponse, key) => {
-            let answers = createAnswer(reponse, key + 1);
-
-            answers.forEach((element) => {
-              answerHTML.appendChild(element);
-            });
-          });
-          document.querySelector("#valider").disabled = false;
-          break;
-      }
-      document
-        .getElementById("valider")
-        .setAttribute("onclick", "this.disabled=true;checkAnswer(" + questionNum + ");");
-      return;
-    });
-  });
-}
-
-async function setQuestionV2() {
-  console.log("setQuestionV2");
+/**
+ * Permet de charger les questions
+ * @async
+ */
+async function setQuestion() {
+  console.log("setQuestion");
   questionRef = db.collection("Salles").where("salle", "==", parseInt(roomId));
   questionRef.get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
@@ -267,7 +223,7 @@ async function setQuestionV2() {
         console.log(enemyLife);
         document
           .getElementById("valider")
-          .setAttribute("onclick", "this.disabled=true;checkAnswerV2(" + questionNum + ");");
+          .setAttribute("onclick", "this.disabled=true;checkAnswer(" + questionNum + ");");
         return;
       } else {
         let question = data.question;
@@ -287,13 +243,18 @@ async function setQuestionV2() {
         console.log(enemyLife);
         document
           .getElementById("valider")
-          .setAttribute("onclick", "this.disabled=true;checkAnswerV2(1);");
+          .setAttribute("onclick", "this.disabled=true;checkAnswer(1);");
         return;
       }
     });
   });
 }
 
+/**
+ * Créer les éléments HTML pour les réponses
+ * @param {string} answer réponse
+ * @param {number} id id de la réponse
+ */
 function createAnswer(answer, id) {
   let input = document.createElement("input");
   input.type = "radio";
@@ -310,38 +271,11 @@ function createAnswer(answer, id) {
   return [input, label];
 }
 
-function checkAnswer(num) {
-  let checkedAnswer = document.querySelector('input[name="reponse"]:checked');
-  let labelAnswer = document.getElementById("reponseCheck" + checkedAnswer.id[7]);
-  let answer = checkedAnswer.value;
-  questionRef.get().then((querySnapshot) => {
-    querySnapshot.forEach(async (doc) => {
-      data = doc.data();
-      console.log("answer:", answer);
-      console.log("good:", goodAnswers[num - 1]);
-      if (goodAnswers[num - 1] == answer) {
-        console.log("bonne reponse");
-        labelAnswer.classList.add("goodAnswer");
-        let allCheckbox = document.querySelectorAll(".reponse");
-        allCheckbox.forEach((checkbox) => {
-          checkbox.setAttribute("disabled", "disabled");
-        });
-        await setLife(true);
-        setQuestionV2("next");
-      } else {
-        console.log("mauvaise reponse");
-        let allCheckbox = document.querySelectorAll(".reponse");
-        labelAnswer.classList.add("badAnswer");
-        allCheckbox.forEach((checkbox) => {
-          checkbox.setAttribute("disabled", "disabled");
-        });
-        await setLife(false);
-        setQuestionV2("next");
-      }
-    });
-  });
-}
-function checkAnswerV2(idAnswer) {
+/**
+ * Vérifie si la réponse est la bonne
+ * @param {number} idAnswer id de la question
+ */
+function checkAnswer(idAnswer) {
   let checkedAnswer = document.querySelector('input[name="reponse"]:checked');
   let labelAnswer = document.getElementById("reponseCheck" + checkedAnswer.id[7]);
   let answer = checkedAnswer.value;
@@ -360,7 +294,7 @@ function checkAnswerV2(idAnswer) {
         });
         await setLife(true);
         if (roomId == 19 && questionNum < questionQte) {
-          setQuestionV2();
+          setQuestion();
         } else {
           endBattle(true);
         }
@@ -373,7 +307,7 @@ function checkAnswerV2(idAnswer) {
         });
         await setLife(false);
         if (roomId == 19 && questionNum < questionQte) {
-          setQuestionV2();
+          setQuestion();
         } else {
           endBattle(false);
         }
@@ -382,12 +316,28 @@ function checkAnswerV2(idAnswer) {
   });
 }
 
+/**
+ * Termine le combat et fais apparaitre le menu de fin
+ * @param {boolean} state true si le joueur a gagné, false sinon
+ */
 function endBattle(state) {
-  if (enemyLife == 0 && playerLife != 0) {
+  if (state) {
     document.getElementById("Enemy").classList.add("kill");
     modalFin.querySelector("h2").innerHTML = "Bravo, Vous avez battu dark " + enemyName + " !";
     modalFin.querySelector("p").innerHTML = "Vous avez débloqué une pièce de puzzle !";
     modalFin.querySelector("#retry").style.display = "none";
+    completeRooms[roomId] = true;
+    userRef.update({
+      salles: completeRooms
+    });
+    nbPieces = 0
+    for(val of Object.values(completeRooms)){
+      console.log(val)
+      if(val){
+        nbPieces++;
+      }
+    }
+    document.getElementById("battleEnd").href = "./carte.php?pieces=" + nbPieces;
   } else {
     if (playerLife == 0) {
       document.getElementById("Player").classList.add("kill");
