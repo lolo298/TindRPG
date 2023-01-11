@@ -3,21 +3,23 @@
     <body>
         <?php component("components/logo.php") ?>
 
-        <form name="login" action="" method="post" class="login-form">
+        <main>
+            <form name="login" action="" method="post" class="login-form">
 
-            <div class="form__group field">
-                <input class="form__field" name="pseudo" placeholder="Pseudonyme" required/>
-                <label for="pseudo" class="form__label"> Pseudonyme </label>
-            </div>
+                <div class="form__group field">
+                    <input class="form__field" name="pseudo" placeholder="Pseudonyme" required/>
+                    <label for="pseudo" class="form__label"> Pseudonyme </label>
+                </div>
 
-            <div class="form__group field">
-                <input class="form__field" name="mail" placeholder="Mail (optionnel)"/>
-                <label for="mail" class="form__label"> Mail (optionnel) </label>
-            </div>
+                <div class="form__group field">
+                    <input class="form__field" name="mail" placeholder="Mail (optionnel)" type="email"/>
+                    <label for="mail" class="form__label"> Mail (optionnel) </label>
+                </div>
 
-            <input type="submit" class="btn formSubmit" value="C'est parti !"></input>
+                <input type="submit" class="btn formSubmit" value="C'est parti !"></input>
 
-        </form>
+            </form>
+        </main>
     </body>
     <script>
 
