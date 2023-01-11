@@ -1,4 +1,4 @@
-# TindRPG
+# MMIQuest
 
 Une web-application permettant de rendre les portes ouvertes de l'IUT de lannion plus ludiques
 
