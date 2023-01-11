@@ -32,14 +32,14 @@ include_once('header.php');
                         <img class="in_button_img" src="./assets/icons/redcross.png" alt="Cancel">
                     </button>
                 </div>
-                <img class="avatar_to_photo" src="./assets/profs/photos/flora.gif" alt="Cancel">
+                <img class="avatar_to_photo" src="<?php echo($value["pht"]);?>" alt="Cancel">
                 <div class="prof_card_name"><?php echo($value["nom"]);?></div>
                 <div class="prof_card_desc"><?php echo($value["resp"]);?></div>
                 <div class="overlay_coord_container">
                     <button class="btn"><p>Coordonnées</p></button>
                     <div class="coord_infos">
-                        <p class="where">Vous trouverez Pierre dans la salle 29 ...etc</p>
-                        <p class="mail"> <span>✉</span> pierre.bueno@univ-rennes1.fr</p>
+                        <p class="where">Vous pourrez trouver <?php echo($value["nom"]);?> en<?php echo($value["pla"]);?></p>
+                        <p class="mail"> <span>✉</span><?php echo($value["mail"]);?></p>
                     </div>
                 </div>
             </div>
@@ -145,6 +145,8 @@ include_once('header.php');
 
     function close_accor(){
         listaccor.forEach(sup => sup.parentNode.querySelector(".accord_content").style.display = 'none')
+        listaccor.forEach(arr => arr.querySelector(".arrow").style.transform = 'rotate(0)')
+
     }
     let listaccor = document.querySelectorAll(".accord_title")
     listaccor.forEach(element => element.addEventListener('click', function(){
@@ -152,10 +154,11 @@ include_once('header.php');
         if(content.style.display == '' || content.style.display == 'none'){
             close_accor()
             content.style.display = 'block'
-            console.log('test')
+            element.parentNode.querySelector(".arrow").style.transform = 'rotate(90deg)'
         }
         else{
             content.style.display = 'none'
+            element.parentNode.querySelector(".arrow").style.transform = 'rotate(0)'
 
         }
     }))

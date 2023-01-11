@@ -88,3 +88,6 @@ body{
 
   }
 
+#next{
+    width: fit-content;
+}
