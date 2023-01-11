@@ -171,8 +171,8 @@ main > div{
 
 ._016-029-2{
   width: 44.2%;
-  height: 4%;
-  top: 61.6%;
+  height: 4.2%;
+  top: 61.3%;
   left: 48.9%;
 }
 
@@ -201,6 +201,11 @@ main > div{
 .puzzle{
   display: flex;
   align-items: center;
+  border: 1px solid #a8a8a8;
+  padding: 0.5em;
+  border-radius: 0.75em;
+  color: inherit;
+  text-decoration: none;
 }
 
 .puzzle span{
@@ -208,7 +213,7 @@ main > div{
 }
 
 .puzzle p{
-  font-size: 2rem;
+  font-size: 1.5em;
   margin-left: 0.35em;
 }
 
@@ -219,8 +224,9 @@ main .btn.blanc{
   border-color: #a8a8a8;
 }
 
-.btn p{
+main > div .btn p{
   margin-left: 0.45em;
+  font-size: 0.8em;
 }
 
 .popup{
@@ -240,7 +246,7 @@ main .btn.blanc{
   display: flex;
 }
 
-.popup .btn{
+.popup-window .btn{
   padding-right: 0;
   padding-left: 0;
   flex: 1;
@@ -252,7 +258,6 @@ main .btn.blanc{
 }
 
 .popup p{
-  font-size: 18px;
   font-weight: 500;
   text-align: center;
   margin-bottom: 2rem;
@@ -266,4 +271,22 @@ main .btn.blanc{
   padding: 2rem;
   background-color: white;
   border-radius: 0.75rem;
+}
+
+.message{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message p{
+  color: white;
+  font-weight: 400;
+}
+
+.message img{
+  position: absolute;
+  bottom: -2.3rem;
+  left: calc(-74.4px + 10%);
+  width: 16.8rem;
 }

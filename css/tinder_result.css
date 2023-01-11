@@ -26,8 +26,6 @@ body{
     text-align: center;
     justify-content: center;
     height: 100%;
-    font-weight: 600;
-    font-family: 'Jost';
     font-size: min(9vw, 30px);
     
 
@@ -59,7 +57,7 @@ body{
     justify-content: flex-start;
 }
 .td_avatar_act_button a{
-    color: var(--rouge);
+    color: var(--primary);
 
 }
 
@@ -90,4 +88,8 @@ body{
 
 #next{
     width: fit-content;
+}
+
+.close_td{
+    font-size: 0.75em;
 }

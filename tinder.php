@@ -7,7 +7,7 @@ justify-content: initial;
 ">
     <div class="td_tutorial">
         <p>Trouvez votre professeur totem en répondant aux questions suivantes !</p>
-        <button id="td_tutorial_act" class="btn blanc">Suivant</button>
+        <button id="td_tutorial_act" class="btn">Suivant</button>
     </div>
             <?php component("components/logo.php") ?>
         <div class="td_blur td_card_container">

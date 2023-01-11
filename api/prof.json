@@ -1,15 +1,6 @@
 {
+
     "0": {
-      "nom": "Pierre BUENO",
-      "spe": "le design",
-      "img": "assets/profs/front/Pierre.png",
-      "fbId": "NZtuWHKE26USEWbkdrmy",
-      "resp": "Responsable Design",
-      "pht": "assets/profs/photos/pie.png",
-      "pla": " 029",
-      "mail": "pierre.bueno@univ-rennes1.fr"
-    },
-    "1": {
         "nom": "Baptiste Vrigneau",
         "spe": "de développement",
         "img": "assets/profs/front/Baptiste.png",
@@ -18,6 +9,16 @@
         "pht": "assets/profs/photos/bapt.png",
         "pla": " 021",
         "mail": "baptiste.vrigneau@univ-rennes1.fr"
+    },
+        "1": {
+      "nom": "Pierre BUENO",
+      "spe": "le design",
+      "img": "assets/profs/front/Pierre.png",
+      "fbId": "NZtuWHKE26USEWbkdrmy",
+      "resp": "Responsable Design",
+      "pht": "assets/profs/photos/pie.png",
+      "pla": " 029",
+      "mail": "pierre.bueno@univ-rennes1.fr"
     },
     "2": {
         "nom": "Benoist DEGONNE",

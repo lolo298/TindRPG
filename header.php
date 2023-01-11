@@ -4,9 +4,10 @@
         $_SESSION['mmiquest'] = [
             'nbr_pieces' => 3,
             'prof_id' => 0,
+            'tuto_carte' => false,
             'salles' => [
                 '019' => true,
-                '020' => true,
+                '020' => false,
                 '016' => false,
                 '029' => false,
             ]
@@ -27,17 +28,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
     <?php
         $own_style_path = "css/" . $file_name . ".css";
         if(file_exists($own_style_path)) echo "<link rel='stylesheet' href='$own_style_path'>";
     ?>
     <title>MMIQuest</title>
+    <script src="./js/global.js"></script>
 
     <!-- Connection Base -->
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
