@@ -4,6 +4,7 @@
   $nbr_pieces = $_SESSION['mmiquest']['nbr_pieces'];
   $id = $_SESSION['mmiquest']['prof_id'];
   $avatar = get_prof_by_id($id);
+  $currentRoom;
 ?>
   <body>
     <?php component('components/logo.php') ?>
@@ -16,6 +17,7 @@
             <?php
               $currentIndex = array_search($key, array_keys($salles));
               $isCurrent = $salle  && ($currentIndex === count($salles) - 1 || !$salles[array_keys($salles)[$currentIndex + 1]]);
+              if($isCurrent) $currentRoom = $key
             ?>
             <div class="salle-overlay _<?= $key . (!$salle ? ' locked' : '') . ($isCurrent ? ' current' : '') ?>" <?= $isCurrent ? "data-room='$key'" : '' ?>>
               <?php if($isCurrent): ?>
@@ -42,8 +44,8 @@
       <div class="popup-window">
         <p>Pop up voulez-vous, vous rendre à la salle 16 ?</p>
         <div>
-          <div class="btn">Oui</div>
-          <div class="btn blanc">Non</div>
+          <a href="battle.php?roomId=<?= $currentRoom ?>" class="btn">Oui</a>
+          <button class="btn blanc close-popup">Non</button>
         </div>
       </div>
     </div>

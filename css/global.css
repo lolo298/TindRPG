@@ -1,6 +1,7 @@
 :root{
   --rouge: #FF6868;
   --white: #F8F8F8;
+  --explication-bg: rgba(0, 0, 0, 0.8)
 }
 
 *{
