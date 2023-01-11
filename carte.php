@@ -42,7 +42,7 @@
     </main>
     <div class="popup">
       <div class="popup-window">
-        <p>Pop up voulez-vous, vous rendre à la salle 16 ?</p>
+        <p>Voulez-vous commencer le combat de la salle <?= $currentRoom ?> ?</p>
         <div>
           <a href="battle.php?roomId=<?= $currentRoom ?>" class="btn">Oui</a>
           <button class="btn blanc close-popup">Non</button>
