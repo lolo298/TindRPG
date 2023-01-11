@@ -45,11 +45,11 @@
             .then((docRef) => {
                 console.log("Document written with ID: ", docRef.id);
                 sessionStorage.setItem("id", docRef.id);
+                document.location.href = "./tinder.php";
             })
             .catch((error) => {
                 console.error("Error adding document: ", error);
             });
-            document.location.href = "./tinder.php";
         }
 
     </script>
