@@ -1,3 +1,7 @@
+:root{
+    --gradiant: linear-gradient(103.33deg, #980DFF 2.9%, #2DAAE1 143.46%);
+}
+
 html,
 body {
     height: 100%;
@@ -25,7 +29,7 @@ a {
     z-index: 5;
     text-decoration: none;
     cursor: pointer;
-    color: #FF6868;
+    color: #980DFF;
 }
 
 h2 {
@@ -33,7 +37,7 @@ h2 {
 }
 
 .btnEmpty:visited {
-    color: #FF6868;
+    color: #980DFF;
 }
 
 button {
@@ -133,7 +137,7 @@ button {
     border-radius: 20px;
     width: 80%;
     z-index: 0;
-    background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
+    background-image: var(--gradiant);
 }
 
 .formWrapper::before {
@@ -160,7 +164,7 @@ button {
     font-size: 1.1em;
     z-index: 0;
     border: 1px solid transparent;
-    background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
+    background-image: var(--gradiant);
 }
 
 .questionWrapper::before {
@@ -209,12 +213,12 @@ button {
 #reponse1:checked~#reponseCheck1,
 #reponse2:checked~#reponseCheck2,
 #reponse3:checked~#reponseCheck3 {
-    background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
+    background-image: var(--gradiant);
 }
 
 #valider,
 .btnFin {
-    background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
+    background-image: var(--gradiant);
 }
 
 .goodAnswer {
@@ -273,7 +277,7 @@ button {
     position: relative;
     color: black;
     border: 1px solid transparent;
-    background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
+    background-image: var(--gradiant);
     margin-right: 5%;
 }
 
@@ -281,7 +285,7 @@ button {
     position: relative;
     color: black;
     border: 1px solid transparent;
-    background-image: linear-gradient(103.33deg, rgb(233, 98, 157) 2.9%, rgb(243, 126, 113) 143.46%);
+    background-image: var(--gradiant);
 }
 
 .btnEmpty {
@@ -307,24 +311,4 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-}
-
-.spinnerWrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    z-index: 40;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.spinner {
-    width: 100px;
-    height: 100px;
 }

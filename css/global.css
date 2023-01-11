@@ -1,6 +1,7 @@
 :root{
   --rouge: #FF6868;
   --white: #F8F8F8;
+  --gradiant: linear-gradient(103.33deg, #980DFF 2.9%, #2DAAE1 143.46%);
 }
 
 *{

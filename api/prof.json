@@ -1,17 +1,17 @@
 {
     "0": {
-      "nom": "Pierre BUENO",
-      "spe": "le design",
-      "img": "assets/profs/front/Pierre.png",
-      "fbId": "NZtuWHKE26USEWbkdrmy",
-      "resp": "Responsable Design"
-    },
-    "1": {
         "nom": "Baptiste Vrigneau",
         "spe": "de développement",
         "img": "assets/profs/front/Baptiste.png",
         "fbId": "szFrKLVEmfjQPnblzvFJ",
         "resp": "Chef de département"
+    },
+    "1": {
+      "nom": "Pierre BUENO",
+      "spe": "le design",
+      "img": "assets/profs/front/Pierre.png",
+      "fbId": "NZtuWHKE26USEWbkdrmy",
+      "resp": "Responsable Design"
     },
     "2": {
         "nom": "Benoist DEGONNE",
