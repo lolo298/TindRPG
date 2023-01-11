@@ -31,6 +31,6 @@
         $own_style_path = "css/" . $file_name . ".css";
         if(file_exists($own_style_path)) echo "<link rel='stylesheet' href='$own_style_path'>";
     ?>
-    <title>TindRPG</title>
+    <title>MMIQuest</title>
 </head>
 <a style="position: absolute; top: 0; left: 0;" href="<?= $file_name ?>.php?reset=">reset session</a>
