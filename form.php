@@ -39,16 +39,17 @@
         function addDoc() {
             // Add a new document with a generated id.
             db.collection("Users").add({
-                name: formValues.name,
-                mail: formValues.mail
+                Name: formValues.pseudo,
+                Mail: formValues.mail
             })
             .then((docRef) => {
                 console.log("Document written with ID: ", docRef.id);
-                //Créer un cookie pour stocker l'id
+                sessionStorage.setItem("id", docRef.id);
             })
             .catch((error) => {
                 console.error("Error adding document: ", error);
             });
+            document.location.href = "./tinder.php";
         }
 
     </script>
