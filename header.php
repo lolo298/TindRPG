@@ -4,10 +4,11 @@
         $_SESSION['mmiquest'] = [
             'nbr_pieces' => 3,
             'prof_id' => 0,
+            'tuto_carte' => false,
             'salles' => [
                 '019' => true,
                 '020' => true,
-                '016' => true,
+                '016' => false,
                 '029' => false,
             ]
         ];
@@ -38,6 +39,7 @@
         if(file_exists($own_style_path)) echo "<link rel='stylesheet' href='$own_style_path'>";
     ?>
     <title>MMIQuest</title>
+    <script src="./js/global.js"></script>
 
     <!-- Connection Base -->
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>

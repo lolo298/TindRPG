@@ -9,12 +9,16 @@
 :root{
   --primary: #980dff;
   --white: #F8F8F8;
+  --explication-bg: rgba(0, 0, 0, 0.8);
+  --gradiant: linear-gradient(103.33deg, #980DFF 2.9%, #2DAAE1 143.46%);
 }
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html, body {

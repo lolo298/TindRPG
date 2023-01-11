@@ -1,6 +1,5 @@
 <?php include_once('header.php') ?>
 <?php
-$enemyName = "Benoist";
 $id = $_SESSION['mmiquest']['prof_id'];
 $fbId = get_prof_by_id($id)['fbId'];
 ?>
@@ -21,7 +20,7 @@ $fbId = get_prof_by_id($id)['fbId'];
       <div id="retry" class="btnEmpty btn" onclick="location.reload()">
         <p style="position:relative;cursor:pointer;">Retenter</p>
       </div>
-      <a class="btnFin btn" href="./carte.php">Retour a la carte</a>
+      <a id="battleEnd" class="btnFin btn" href="./carte.php">Retour a la carte</a>
     </div>
   </div>
   <div id="Title" class="title">
@@ -41,12 +40,12 @@ $fbId = get_prof_by_id($id)['fbId'];
     </div>
     <div id="Enemy" class="wrapper">
       <div class="mobInfo">
-        <img src="./assets/battle/dark/<?= $enemyName ?>.png" alt="Player life" class="battleSprite" />
+        <img src="" alt="Player life" class="battleSprite" />
         <div class="LifeBackDark lifeBack"></div>
         <div id="EnemyLife" class="lifeBar"></div>
       </div>
       <div id="EnemySprite">
-        <img src="./assets/profs/dark/<?= $enemyName ?>.png" alt="Dark <?= $enemyName ?>" class="sprite" />
+        <img src="" alt="" class="sprite" />
       </div>
     </div>
   </div>

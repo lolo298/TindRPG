@@ -1,9 +1,12 @@
 <svg width="50" height="50" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg">
     <defs>
-        <linearGradient x1="8.042%" y1="0%" x2="65.682%" y2="23.865%" id="a">
-            <stop stop-color="#DE0D67" stop-opacity="0" offset="0%"/>
-            <stop stop-color="#DE0D67" stop-opacity=".631" offset="63.146%"/>
-            <stop stop-color="#DE0D67" offset="100%"/>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="a">
+          <stop offset="0%" style="stop-color:rgb(255,211,7);stop-opacity:0.00" />
+          <stop offset="20%" style="stop-color:rgb(255,211,7);stop-opacity:0.20" />
+          <stop offset="40%" style="stop-color:rgb(243,146,0);stop-opacity:0.40" />
+          <stop offset="60%" style="stop-color:rgb(152,13,255);stop-opacity:0.60" />
+          <stop offset="80%" style="stop-color:rgb(45,170,225);stop-opacity:0.80" />
+          <stop offset="100%" style="stop-color:rgb(71,190,165);stop-opacity:1.00" />
         </linearGradient>
     </defs>
     <g fill="none" fill-rule="evenodd">
@@ -17,7 +20,7 @@
                     dur="0.9s"
                     repeatCount="indefinite" />
             </path>
-            <circle fill="#DE0D67" cx="36" cy="18" r="1">
+            <circle fill="rgb(71,190,165)" cx="36" cy="18" r="1">
                 <animateTransform
                     attributeName="transform"
                     type="rotate"

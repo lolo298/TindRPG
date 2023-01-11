@@ -1,58 +1,83 @@
 {
+
     "0": {
-      "nom": "Pierre BUENO",
-      "spe": "le design",
-      "img": "assets/profs/front/Pierre.png",
-      "fbId": "NZtuWHKE26USEWbkdrmy",
-      "resp": "Responsable Design"
-    },
-    "1": {
         "nom": "Baptiste Vrigneau",
         "spe": "de développement",
         "img": "assets/profs/front/Baptiste.png",
         "fbId": "szFrKLVEmfjQPnblzvFJ",
-        "resp": "Chef de département"
+        "resp": "Chef de département",
+        "pht": "assets/profs/photos/bapt.png",
+        "pla": " 021",
+        "mail": "baptiste.vrigneau@univ-rennes1.fr"
+    },
+        "1": {
+      "nom": "Pierre BUENO",
+      "spe": "le design",
+      "img": "assets/profs/front/Pierre.png",
+      "fbId": "NZtuWHKE26USEWbkdrmy",
+      "resp": "Responsable Design",
+      "pht": "assets/profs/photos/pie.png",
+      "pla": " 029",
+      "mail": "pierre.bueno@univ-rennes1.fr"
     },
     "2": {
         "nom": "Benoist DEGONNE",
         "spe": "l'audiovisuel",
         "img": "assets/profs/front/Benoist.png",
         "fbId": "BL8njhrcH1dBVyRMvcYy",
-        "resp": "Responsable Audiovisuel"
+        "resp": "Responsable Audiovisuel",
+        "pht": "assets/profs/photos/ben.png",
+        "pla": " 029",
+        "mail": "benoist.degonne@univ-rennes1.fr"
     },
     "3": {
         "nom": "Corrine SCHUCHARD",
         "spe": "le marketing",
         "img": "assets/profs/front/Corinne.png",
         "fbId": "mhZD2UGTHUXRQcWCizRJ",
-        "resp": "Responsable Marketting"
+        "resp": "Responsable Marketting",
+        "pht": "assets/profs/photos/cor.png",
+        "pla": " 016",
+        "mail": "corinne.schuchard@univ-rennes1.fr"
     },
     "4": {
         "nom": "Alexandre PICOGNA",
         "spe": "le développement",
         "img": "assets/profs/front/Alexandre.png",
         "fbId": "nyLiifx6EGixCXw3UHBU",
-        "resp": "Responsable Développement"
+        "resp": "Responsable Développement",
+        "pht": "assets/profs/photos/alex.png",
+        "pla": " 020",
+        "mail": "alexandre.picogna@univ-rennes1.fr"
     },
     "5": {
         "nom": "Flora  NATIVEL",
         "spe": "la communication",
         "img": "assets/profs/front/Flora.png",
         "fbId": "h5QqBJeyhx5Tg5Xs9T4d",
-        "resp": "Responsable Communication"
+        "resp": "Responsable Communication",
+        "pht": "assets/profs/photos/flo.png",
+        "pla": " 016",
+        "mail": "flora.nativel@univ-rennes1.fr"
     },
     "6": {
         "nom": "Grégoire CLIQUET",
         "spe": "le design",
         "img": "assets/profs/front/Gregoire.png",
         "fbId": "wBT6EwMZR7AlcmR0yZqc",
-        "resp": "Responsable Design d'expérience"
+        "resp": "Responsable Design d'expérience",
+        "pht": "assets/profs/photos/greg.png",
+        "pla": " 020",
+        "mail": "gregoire.cliquet@univ-rennes1.fr"
     },
     "7": {
         "nom": "Sophie MARCHAND",
         "spe": "le marketing",
         "img": "assets/profs/front/Sophie.png",
         "fbId": "1K3HCKhOadVqjETRF8Hr",
-        "resp": "Responsable Marketing"
+        "resp": "Responsable Marketing",
+        "pht": "assets/profs/photos/soph.png",
+        "pla": " 016",
+        "mail": "sophie.marchand@univ-rennes1.fr"
     }
   }

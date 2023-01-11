@@ -39,10 +39,19 @@
         });
 
         function addDoc() {
+            let pieces = {
+                "16": false,
+                "19": false,
+                "20": false,
+                "21": false,
+                "29": false
+            }
+
             // Add a new document with a generated id.
             db.collection("Users").add({
                 Name: formValues.pseudo,
-                Mail: formValues.mail
+                Mail: formValues.mail,
+                salles: pieces
             })
             .then((docRef) => {
                 console.log("Document written with ID: ", docRef.id);
