@@ -201,6 +201,11 @@ main > div{
 .puzzle{
   display: flex;
   align-items: center;
+  border: 1px solid #a8a8a8;
+  padding: 0.5em;
+  border-radius: 0.75em;
+  color: inherit;
+  text-decoration: none;
 }
 
 .puzzle span{
@@ -240,7 +245,7 @@ main .btn.blanc{
   display: flex;
 }
 
-.popup .btn{
+.popup-window .btn{
   padding-right: 0;
   padding-left: 0;
   flex: 1;

@@ -4,6 +4,7 @@
   $nbr_pieces = $_SESSION['mmiquest']['nbr_pieces'];
   $id = $_SESSION['mmiquest']['prof_id'];
   $avatar = get_prof_by_id($id);
+  $tuto = $_SESSION['mmiquest']['tuto_carte'];
   $currentRoom;
 ?>
   <body>
@@ -35,19 +36,28 @@
           <div class="passage _016-029-2"></div>
         </div>
       </div>
-      <div class="puzzle">
+      <a href="puzzle.php" class="puzzle">
         <img src="assets/puzzle_icon.svg" alt="">
         <p><?= $nbr_pieces ?><span>/</span>5</p>
-      </div>
+      </a>
     </main>
-    <div class="popup">
-      <div class="popup-window">
+    <div class="popup<?= !$tuto ? ' visible' : '' ?>">
+      <?php if($tuto): ?>
+        <div class="popup-window">
         <p>Voulez-vous commencer le combat de la salle <?= $currentRoom ?> ?</p>
         <div>
-          <a href="battle.php?roomId=<?= $currentRoom ?>" class="btn">Oui</a>
+          <a href="battle.php?roomId=<?= substr($currentRoom, 1); ?>" class="btn">Oui</a>
           <button class="btn blanc close-popup">Non</button>
         </div>
       </div>
+      <?php else: ?>
+        <div class="message">
+          <p class="message-content">
+            A présent, je vais te guider à travers ta quête de la JPO
+          </p>
+          <a href="carte.php?tuto=" class="btn">Suivant</a>
+        </div>
+      <?php endif ?>
     </div>
     <script src="js/carte.js"></script>
   </body>

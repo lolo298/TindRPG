@@ -4,6 +4,7 @@
         $_SESSION['mmiquest'] = [
             'nbr_pieces' => 3,
             'prof_id' => 0,
+            'tuto_carte' => false,
             'salles' => [
                 '019' => true,
                 '020' => true,
