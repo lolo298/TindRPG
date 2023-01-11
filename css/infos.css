@@ -17,6 +17,7 @@ body{
     justify-content: space-around;
     height: 8%;
     margin-bottom: 8%;
+    font-size: 21px;
 }
 
 .overlay{
@@ -164,7 +165,7 @@ body{
     background-color: #FBD5DA;
     display: flex;
     flex-direction: column;
-    padding-top: 15%;
+    padding-top: min(15%, 60px);
 }
 
 .where {
@@ -184,7 +185,51 @@ body{
     padding: 6px 16px 6px 16px;
 
 }
+
 .mail span{
     text-decoration-line: none;
     font-size: 22px;
 }
+
+.accord{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+.info_liste{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    overflow: scroll;
+    flex-direction: column;
+}
+
+.accord_title{
+    width: 100%;
+    justify-content: space-between;  
+    padding: 10px;  
+    box-shadow: none;
+    border-bottom-right-radius: 0px;
+
+}
+
+.accord_content{
+    width: 80%;
+    background-color: #FBD5DA;
+    border-bottom-left-radius: 16px;
+}
+
+.title{
+    margin-top: 10px;
+    font-size: 1.3em;
+}
+
+.accord_content_text{
+    padding: 20px 20px 25px 20px;
+}
+
