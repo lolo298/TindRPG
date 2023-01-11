@@ -7,7 +7,7 @@
             'salles' => [
                 '019' => true,
                 '020' => true,
-                '016' => true,
+                '016' => false,
                 '029' => false,
             ]
         ];
