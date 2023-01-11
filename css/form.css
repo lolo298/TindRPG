@@ -1,19 +1,12 @@
 body {
   display: flex;
   flex-direction: column;
-}
-
-main {
-  display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  height: 90vh;
 }
 
 .td_toplogo {
-  justify-self: center;
-  height: 10vh;
+  transform: translateY(-5vh);
 }
 
 .login-form {
@@ -23,7 +16,6 @@ main {
     justify-content: center;
     gap: 5vh;
     width: 100%;
-    flex-grow: 2;
 }
 
 .form__group {

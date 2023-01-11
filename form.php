@@ -3,7 +3,6 @@
     <body>
         <?php component("components/logo.php") ?>
 
-        <main>
             <form name="login" action="" method="post" class="login-form">
 
                 <div class="form__group field">
@@ -19,7 +18,6 @@
                 <input type="submit" class="btn formSubmit" value="C'est parti !"></input>
 
             </form>
-        </main>
     </body>
     <script>
 
