@@ -59,7 +59,7 @@ body{
     justify-content: flex-start;
 }
 .td_avatar_act_button a{
-    color: var(--rouge);
+    color: var(--primary);
 
 }
 

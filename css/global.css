@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'retro_gamingregular';
+  src: url('../assets/fonts/retro_gaming-webfont.woff2') format('woff2'),
+       url('../assets/fonts/retro_gaming-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root{
-  --rouge: #FF6868;
+  --primary: #980dff;
   --white: #F8F8F8;
 }
 
@@ -15,4 +23,8 @@ html, body {
   font-size: 14px;
   color: #333;
   background: var(--white);
+}
+
+h1 {
+  font-family: 'retro_gamingregular';
 }

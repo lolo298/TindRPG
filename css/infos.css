@@ -65,7 +65,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--rouge);
+    background-color: var(--primary);
     width: 150px;
     border-radius: 10px;
     height: fit-content;

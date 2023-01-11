@@ -95,7 +95,7 @@ body {
 }
 
 .td_like_button{
-    background: var(--rouge);
+    background: var(--primary);
 }
 
 .td_button_img{
