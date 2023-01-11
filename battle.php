@@ -1,7 +1,8 @@
 <?php include_once('header.php') ?>
 <?php 
-$enemyName = "Baptiste";
-setcookie("id", "NZtuWHKE26USEWbkdrmy");
+$enemyName = "Benoist";
+$id = $_SESSION['mmiquest']['prof_id'];
+$fbId = get_prof_by_id($id)['fbId'];
  ?>
 
   <body>
@@ -26,6 +27,7 @@ setcookie("id", "NZtuWHKE26USEWbkdrmy");
     </script>
     <script>
       enemyName = '<?= $enemyName ?>';
+      fbId = '<?= $fbId ?>';
     </script>
 
     <div id="modalFinWrapper">
@@ -33,6 +35,8 @@ setcookie("id", "NZtuWHKE26USEWbkdrmy");
         <img src="" alt="" />
         <h2></h2>
         <p></p>
+        <img src="./assets/Logo.png" alt="Puzzle">
+        <div id="retry" class="btnEmpty btn" ><a href="./battle.php">Retenter</a></div>
         <a class="btnFin btn" href="./carte.php">Retour a la carte</a>
       </div>
     </div>
@@ -70,7 +74,7 @@ setcookie("id", "NZtuWHKE26USEWbkdrmy");
       <form action="" id="Reponses"></form>
     </div>
     <div class="boutonSuite">
-    <div id="retour" class="btn" ><a href="./carte.php">Retour</a></div>
+    <div id="retour" class="btn btnEmpty" ><a href="./carte.php">Retour</a></div>
     <button id="valider" class="btn" onclick="this.disable=true;checkAnswer();">Valider</button>
   </div>
     <script src="./js/global.js"></script>
