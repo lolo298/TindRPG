@@ -1,28 +1,28 @@
 {
     "0": {
       "nom": "Salle 016",
-      "spe": "de développement",
-      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+      "spe": "Salle Communication, Marketing, Langue",
+      "desc": "Vous pourrez rencontrer dans cette salle, les professeurs responsables de la communication, du marketing et d'anglais."
 
     },
     "1": {
       "nom": "Salle 019",
-      "spe": "de développement",
-      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+      "spe": "Salle d'accueil",
+      "desc": "Salle dans laquelle vous pouvez accéder à la JPO. Elle propose un espace de discussion. Vous pourrez accéder aux conférences ici."
     },
     "2": {
         "nom": "Salle 020",
-        "spe": "de développement",
-        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+        "spe": "Salle Développement Web, Design UI /UX",
+        "desc": "Vous pourrez rencontrer dans cette salle, les professeurs responsables du développement Web, du design d'expérience et d'interface."
     },
     "3": {
         "nom": "Salle 021",
-        "spe": "de développement",
-        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+        "spe": "Salle de transition",
+        "desc": "Salle permettant de transiter du couloir de la salle 016 et celui de la salle 029."
     },
     "4": {
         "nom": "Salle 029",
-        "spe": "de développement",
-        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+        "spe": "Salle Audiovisuel et Création",
+        "desc": "Vous pourrez rencontrer dans cette salle, les professeurs responsables de l'audiovisuel et du design."
     }
   }

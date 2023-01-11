@@ -46,7 +46,7 @@ button {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
+    top: 10px;
     z-index: 50;
 }
 
@@ -185,6 +185,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .reponse {
