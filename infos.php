@@ -4,6 +4,7 @@ include_once('header.php');
 ?>
 <body>
     <?php component("components/logo.php") ?>
+    <button value="prof" class="quit btn blanc"><span>◄</span><p>Retour à la carte</p></button>
     <div class="in_buttons_container">
         <button value="prof" class="in_but btn"><p>Professeur</p><span>►</span></button>
         <button value="salles" class="in_but btn"><p>Salles</p><span>►</span></button>
@@ -162,4 +163,7 @@ include_once('header.php');
 
         }
     }))
+    document.querySelector('.quit').addEventListener('click',function(){
+        location.href = 'carte.php'
+    })
 </script>
