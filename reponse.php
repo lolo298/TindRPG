@@ -5,6 +5,15 @@ $nbr_pieces = $_SESSION['mmiquest']['nbr_pieces'];
 ?>
 
 <body>
+  <style>
+    main{
+        <?php if($reponse){ ?>
+          height: 100%;
+        <?php }else{ ?>
+          height: 40%;
+        <?php } ?>
+    }
+  </style>
   <?php component('components/logo.php') ?>
   <main>
     <?php if($reponse): ?>

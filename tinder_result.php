@@ -5,7 +5,7 @@ include_once('header.php')
 <body style="
 justify-content: initial;
 ">
-<p class="td_text" style="display: none;">Je vois que tu aimes <?php echo(get_prof_by_id($_GET['pid'])['spe'])?></p>
+<p class="td_text" style="display: none;">Je vois que tu aimes <?php echo(get_prof_by_id($_GET['pid'])['spe'])?>! C'est ma spécialité!</p>
 <p class="pid" style="display: none;"><?php echo($_GET['pid'])?></p>
     <?php component("components/logo.php") ?>
     <div class="td_dialog">
