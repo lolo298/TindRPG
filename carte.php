@@ -1,5 +1,8 @@
 <?php
   require_once('header.php');
+  if(isset($_GET['pieces'])){
+    $_SESSION['mmiquest']['nbr_pieces'] = intval($_GET['pieces']);
+  }
   $salles = $_SESSION['mmiquest']['salles'];
   $nbr_pieces = $_SESSION['mmiquest']['nbr_pieces'];
   $id = $_SESSION['mmiquest']['prof_id'];
@@ -52,9 +55,10 @@
       </div>
       <?php else: ?>
         <div class="message">
-          <p class="message-content">
-            A présent, je vais te guider à travers ta quête de la JPO
-          </p>
+        <img src="<?= $avatar["img"] ?>" alt="<?= $avatar["nom"] ?>">
+          <div class="message-content">
+            <p>A présent, je vais te guider à travers ta quête de la JPO</p>
+           </div>
           <a href="carte.php?tuto=" class="btn">Suivant</a>
         </div>
       <?php endif ?>

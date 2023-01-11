@@ -272,3 +272,21 @@ main > div .btn p{
   background-color: white;
   border-radius: 0.75rem;
 }
+
+.message{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message p{
+  color: white;
+  font-weight: 400;
+}
+
+.message img{
+  position: absolute;
+  bottom: -2.3rem;
+  left: calc(-74.4px + 10%);
+  width: 16.8rem;
+}
