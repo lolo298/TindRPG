@@ -1,0 +1,28 @@
+{
+    "0": {
+      "nom": "Salle 016",
+      "spe": "de développement",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+
+    },
+    "1": {
+      "nom": "Salle 019",
+      "spe": "de développement",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+    },
+    "2": {
+        "nom": "Salle 020",
+        "spe": "de développement",
+        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+    },
+    "3": {
+        "nom": "Salle 021",
+        "spe": "de développement",
+        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+    },
+    "4": {
+        "nom": "Salle 029",
+        "spe": "de développement",
+        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+    }
+  }

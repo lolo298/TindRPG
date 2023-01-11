@@ -9,15 +9,17 @@
   </body>
   <main>
     <div class="carte">
-      <img src="assets/carte.png" alt="">
+      <img class="carte-img" src="assets/carte.png" alt="">
       <?php foreach($salles as $key => $salle): ?>
         <?php
           $currentIndex = array_search($key, array_keys($salles));
-          $isCurrent = $salle && $currentIndex < count($salles) && !$salles[array_keys($salles)[$currentIndex]];
+          $isCurrent = $salle  && ($currentIndex === count($salles) - 1 || !$salles[array_keys($salles)[$currentIndex + 1]]);
         ?>
         <div class="salle-overlay _<?= $key . (!$salle ? ' locked' : '') . ($isCurrent ? ' current' : '') ?>">
           <?php if($isCurrent): ?>
-            <img src="<?= $avatar["img"] ?>" alt="<?= $avatar["nom"] ?>">
+            <div>
+              <img class="avatar" src="<?= $avatar["img"] ?>" alt="<?= $avatar["nom"] ?>">
+            </div>
           <?php endif ?>
         </div>
       <?php endforeach ?>

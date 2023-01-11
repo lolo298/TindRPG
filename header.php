@@ -7,7 +7,7 @@
             'salles' => [
                 '019' => true,
                 '020' => true,
-                '016' => false,
+                '016' => true,
                 '029' => false,
             ]
         ];
@@ -37,7 +37,7 @@
         $own_style_path = "css/" . $file_name . ".css";
         if(file_exists($own_style_path)) echo "<link rel='stylesheet' href='$own_style_path'>";
     ?>
-    <title>TindRPG</title>
+    <title>MMIQuest</title>
 
     <!-- Connection Base -->
     <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
