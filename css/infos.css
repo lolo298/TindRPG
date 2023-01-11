@@ -90,8 +90,9 @@ body{
 }
 .prof_card_desc{
     color: white;
-    font-size: 10px;
-    text-align: center
+    font-size: 0.6em;
+    margin-top: 0.5em;
+    text-align: center;
 }
 
 .prof_card_overlay{
@@ -181,7 +182,7 @@ body{
 .mail{
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.8em;
     line-height: 17px;
     text-decoration-line: underline;
     padding: 6px 16px 6px 16px;
@@ -190,7 +191,7 @@ body{
 
 .mail span{
     text-decoration-line: none;
-    font-size: 22px;
+    margin-right: 0.25em;
 }
 
 .accord{

@@ -2,26 +2,22 @@
     --gradiant: linear-gradient(103.33deg, #980DFF 2.9%, #2DAAE1 143.46%);
 }
 
-html,
-body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-* {
+main * {
     box-sizing: unset !important;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 30px;
     color: black;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 a {
@@ -33,7 +29,7 @@ a {
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.6em;
 }
 
 .btnEmpty:visited {
@@ -200,10 +196,11 @@ button {
     margin: 5px;
     text-align: center;
     width: 80%;
-    padding: 5%;
+    padding: 4% 2%;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0px 0px 5px 0px #000000;
+    font-size: 0.8em;
 }
 
 .reponseCheck:hover {
@@ -264,12 +261,10 @@ button {
 }
 
 .btn {
-    font-size: 1.4em;
     border: unset;
     background-color: unset;
     border-radius: 50px;
     width: 70%;
-    padding: 5% 10%;
     color: white;
 }
 

@@ -6,9 +6,6 @@
   $avatar = get_prof_by_id($id);
   $tuto = $_SESSION['mmiquest']['tuto_carte'];
   $currentRoom;
-  if(isset($_GET['pieces'])){
-    $_SESSION['mmiquest']['nbr_pieces'] = intval($_GET['pieces']);
-  }
 ?>
   <body>
     <?php component('components/logo.php') ?>

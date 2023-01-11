@@ -7,7 +7,7 @@
             'tuto_carte' => false,
             'salles' => [
                 '019' => true,
-                '020' => true,
+                '020' => false,
                 '016' => false,
                 '029' => false,
             ]
