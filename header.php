@@ -3,7 +3,13 @@
     if(!isset($_SESSION['mmiquest']) || isset($_GET["reset"])){
         $_SESSION['mmiquest'] = [
             'nbr_pieces' => 3,
-            'prof_id' => 0
+            'prof_id' => 0,
+            'salles' => [
+                '019' => true,
+                '020' => true,
+                '016' => false,
+                '029' => false,
+            ]
         ];
     };
     include_once('functions.php');
