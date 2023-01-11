@@ -32,7 +32,7 @@ include_once('header.php');
                         <img class="in_button_img" src="./assets/icons/redcross.png" alt="Cancel">
                     </button>
                 </div>
-                <img class="avatar_to_photo" src="./assets/profs/photos/pierre.png" alt="Cancel">
+                <img class="avatar_to_photo" src="./assets/profs/photos/flora.gif" alt="Cancel">
                 <div class="prof_card_name"><?php echo($value["nom"]);?></div>
                 <div class="prof_card_desc"><?php echo($value["resp"]);?></div>
                 <div class="overlay_coord_container">
@@ -52,12 +52,48 @@ include_once('header.php');
             <button value="salles" class="ret_but btn blanc"><span>◄</span><p>Retour</p></button>
             <p class="overlay_title">Informations Salles</p>
         </div>
+        <div class="info_liste">
+            <?php
+             $rooms = list_all_room();
+             foreach($rooms as $key=>$value) {
+            ?>
+                <div class="accord">
+                    <button class="btn accord_title"><?php echo($value["nom"]);?>
+                        <span class="arrow">▷</span>
+                    </button>
+                    <div class="accord_content" style="display: none;">
+                        <p class="accord_content_text">
+                            <span class="title"><?php echo($value["spe"]);?></span><br><br>
+                            <?php echo($value["desc"]);?>
+                        </p>
+                    </div>
+                </div>
+            <?php }?>   
+        </div>
     </div>
     
     <div class="butdj overlay">
         <div class="overlay_header">
             <button value="butdj" class="ret_but btn blanc"><span>◄</span><p>Retour</p></button>
             <p class="overlay_title">Informations But du Jeu</p>
+        </div>
+        <div class="info_liste">
+            <?php
+             $rules = list_all_rules();
+             foreach($rules as $key=>$value) {
+                ?>
+                <div class="accord">
+                    <button class="btn accord_title"><?php echo($value["nom"]);?>
+                        <span class="arrow">▷</span>
+                    </button>
+                    <div class="accord_content" style="display: none;">
+                        <p class="accord_content_text">
+                            <span class="title"><?php echo($value["spe"]);?></span><br><br>
+                            <?php echo($value["desc"]);?>
+                        </p>
+                    </div>
+                </div>
+            <?php }?>    
         </div>
     </div>
 </body>
@@ -106,4 +142,21 @@ include_once('header.php');
             hide_prof(element.value)
         })
     })
+
+    function close_accor(){
+        listaccor.forEach(sup => sup.parentNode.querySelector(".accord_content").style.display = 'none')
+    }
+    let listaccor = document.querySelectorAll(".accord_title")
+    listaccor.forEach(element => element.addEventListener('click', function(){
+        let content = element.parentNode.querySelector(".accord_content")
+        if(content.style.display == '' || content.style.display == 'none'){
+            close_accor()
+            content.style.display = 'block'
+            console.log('test')
+        }
+        else{
+            content.style.display = 'none'
+
+        }
+    }))
 </script>

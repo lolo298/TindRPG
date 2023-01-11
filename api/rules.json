@@ -1,0 +1,18 @@
+{
+    "0": {
+      "nom": "But du jeu",
+      "spe": "de développement",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+
+    },
+    "1": {
+      "nom": "Puzzle",
+      "spe": "de développement",
+      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+    },
+    "2": {
+        "nom": "Carte",
+        "spe": "de développement",
+        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+    }
+  }

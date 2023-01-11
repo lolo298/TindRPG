@@ -7,19 +7,75 @@ main{
   padding: 0 10%;
 }
 
+.carte img{
+  pointer-events: none;
+}
+
 .carte{
   position: relative;
 }
 
-.carte img{
+.carte-img{
   width: 100%;
   mix-blend-mode: multiply;
+  position: relative;
+  z-index: 1;
+}
+
+.avatar{
+  position: relative;
+  z-index: 1;
+  width: 14vw;
 }
 
 .salle-overlay, .passage{
   position: absolute;
   background: var(--locked);
-  mix-blend-mode: darken;
+}
+
+@keyframes fade{
+  50%{
+    background-color: rgba(21, 227, 16, 0.03);
+  }
+}
+
+.salle-overlay.current{
+  animation: fade 1.25s ease-in-out infinite;
+}
+
+.salle-overlay.current > div{
+  position: relative;
+  height: 100%;
+}
+
+@keyframes focus{
+  from{
+    opacity: 0;
+    transform: scale(1.25);
+  }
+  50%{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+    transform: none;
+  }
+}
+
+.salle-overlay.current > div:after,
+.salle-overlay.current > div:before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  outline: 1px solid rgb(68, 188, 66);
+  left: 0;
+  top: 0;
+  animation: focus 1s ease-out infinite;
+}
+
+.salle-overlay.current > div:before{
+  animation-delay: 0.5s;
 }
 
 .salle-overlay:not(.locked){
@@ -33,12 +89,23 @@ main{
   top: 32%;
 }
 
+._019 img{
+  top: 20.7%;
+  left: 11.6%;
+}
+
 ._020{
   left: 45.4%;
   width: 29.8%;
   height: 19%;
   top: 32%;
 }
+
+._020 img{
+  top: 30.7%;
+  left: 41.6%;
+}
+
 
 ._016{
   left: 68.9%;
@@ -47,11 +114,21 @@ main{
   top: 2.5%;
 }
 
+._016 img{
+  top: 10.8%;
+  left: 43%;
+}
+
 ._029{
   left: 45.1%;
   width: 29.8%;
   height: 32.1%;
   top: 65.6%;
+}
+
+._029 img{
+  top: 19.9%;
+  left: -2.9%;
 }
 
 ._020-016{
