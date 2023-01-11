@@ -5,7 +5,7 @@ include_once('header.php')
 <body style="
 justify-content: initial;
 ">
-<p class="td_text" style="display: none;">Je vois que tu aime <?php echo(get_prof_by_id($_GET['pid'])['spe'])?></p>
+<p class="td_text" style="display: none;">Je vois que tu aimes <?php echo(get_prof_by_id($_GET['pid'])['spe'])?></p>
 <p class="pid" style="display: none;"><?php echo($_GET['pid'])?></p>
     <?php component("components/logo.php") ?>
     <div class="td_dialog">
@@ -39,18 +39,8 @@ justify-content: initial;
         }
         else if(dg_count==3){
             console.log('slt')
-            location.href = "save_prof.php?pid="+ document.querySelector('.pid').innerHTML;
+            location.href = "save_prof.php?pid="+ <?= $_GET['pid'] ?>;
         }
         dg_count++
     }
 </script>
-    <!-- <div class="td_toplogo">
-        <img class="td_applogo" src="./assets/Logo.png" alt="TindRPG">
-        <h2 class="td_logotitle">TindRPG</h2>
-    </div> -->
-
-        <!-- <img class="td_avatar" src="<?php echo(get_prof_by_id($_GET['pid'])['img'])?>" alt="<?php echo(get_prof_by_id($_GET['pid'])['nom'])?>">
-        <div class="td_avatar_dialog">
-            <p class="td_text_dialog">Salut, moi c'est <?php echo(get_prof_by_id($_GET['pid'])['nom'])?></p>
-             <img src="assets/questions/bulle.png" alt=""> 
-        </div> -->
