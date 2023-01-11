@@ -23,4 +23,12 @@ function list_all_prof(){
     $file_content = file_get_contents($GLOBALS["prefix_path"]."prof.json");
     return json_decode($file_content, true);
 }
+function list_all_room(){
+    $file_content = file_get_contents($GLOBALS["prefix_path"]."room.json");
+    return json_decode($file_content, true);
+}
+function list_all_rules(){
+    $file_content = file_get_contents($GLOBALS["prefix_path"]."rules.json");
+    return json_decode($file_content, true);
+}
 ?>
