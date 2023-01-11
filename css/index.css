@@ -12,14 +12,13 @@ body {
 }
 
 #startTitle {
-    font-size: 3em;
+    font-size: 1.8em;
     font-weight: 700;
     text-align: center;
 }
 
 #textStart {
     margin: 0 10%;
-    font-size: 20px;
     text-align: center;
 }
 

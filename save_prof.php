@@ -9,8 +9,8 @@ $spe = get_prof_by_id($_SESSION['mmiquest']['prof_id'])['spe'];
 <script>
    spinner(true);
  db.collection("Users").doc(sessionStorage.getItem("id")).update({
-    "avatar": '<?= $nom[0] ?>',
-    "matiere": '<?= $spe ?>',
+    "avatar": "<?= $nom[0] ?>",
+    "matiere": "<?= $spe ?>",
  }).then(()=>{
     document.location.href = "./carte.php";
  })

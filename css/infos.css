@@ -17,7 +17,6 @@ body{
     justify-content: space-around;
     height: 8%;
     margin-bottom: 8%;
-    font-size: 21px;
 }
 
 .overlay{
@@ -51,7 +50,6 @@ body{
 .overlay_title{
     width: 100%;
     padding-left: 5%;
-    font-size: 1.5em;
 }
 
 .prof_card_container{
@@ -86,9 +84,9 @@ body{
 .prof_card_name{
     color: white;
     font-weight: bold;
-    font-size: 17px;
     line-height: 18px;
-    text-align: center
+    text-align: center;
+    font-size: 0.85em;
 }
 .prof_card_desc{
     color: white;
@@ -140,7 +138,7 @@ body{
 
 .prof_card_overlay .prof_card_name{
     color: black;
-    font-size: 1.7em;
+    font-size: 1.5em;
     margin-top: 2vh;
 }
 
@@ -230,7 +228,7 @@ body{
 
 .title{
     margin-top: 10px;
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
 .accord_content_text{

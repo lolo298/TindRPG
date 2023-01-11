@@ -19,12 +19,9 @@ body {
 
 .td_tutorial p{
     width: 80%;
-    font-family: 'Jost';
     color: white;
     font-style: normal;
     text-align: center;
-    font-weight: bold;
-    font-size: 1.7em;
     line-height: 36px;
     margin-bottom: 10%;
 }
@@ -61,8 +58,7 @@ body {
     background-position: 50% 50%;
     color: white;
     font-weight: 300;
-    font-family: 'Jost';
-    font-size: 1.8em;
+    font-size: 1.2em;
     text-align: center;
     margin-top: 10%;
     width: 90%;
