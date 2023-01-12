@@ -10,6 +10,7 @@
   height: 100%;
 
   --primary: #980dff;
+  --primary-light: hsl(277, 100%, 95%);
   --white: #F8F8F8;
   --explication-bg: rgba(0, 0, 0, 0.8);
   --gradiant: linear-gradient(103.33deg, #980DFF 2.9%, #2DAAE1 143.46%);
@@ -33,4 +34,8 @@ body {
 
 h1 {
   font-family: 'retro_gamingregular';
+}
+
+.break{
+  display: inline-block;
 }

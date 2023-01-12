@@ -224,7 +224,7 @@ main .btn.blanc{
   border-color: #a8a8a8;
 }
 
-main > div .btn p{
+.info-btn p{
   margin-left: 0.45em;
   font-size: 0.8em;
 }
@@ -240,6 +240,7 @@ main > div .btn p{
   align-items: center;
   justify-content: center;
   display: none;
+  overflow: hidden;
 }
 
 .popup.visible{
@@ -285,8 +286,19 @@ main > div .btn p{
 }
 
 .message img{
+  z-index: -1;
   position: absolute;
   bottom: -2.3rem;
   left: calc(-74.4px + 10%);
   width: 16.8rem;
+}
+
+.message-content p:not(.current-p){
+  display: none;
+}
+
+.mask{
+  position: relative;
+  z-index: 2;
+  pointer-events: none
 }

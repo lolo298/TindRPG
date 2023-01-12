@@ -1,7 +1,10 @@
 <?php
   require_once('header.php');
+  if(isset($_GET['tuto'])){
+    $_SESSION['mmiquest']['tuto_carte'] = true;
+  }
   if(isset($_GET['pieces'])){
-    $_SESSION['mmiquest']['nbr_pieces'] = intval($_GET['pieces']);
+    $_SESSION['mmiquest']['nbr_pieces'] = $_GET['pieces'];
   }
   $salles = $_SESSION['mmiquest']['salles'];
   $nbr_pieces = $_SESSION['mmiquest']['nbr_pieces'];
@@ -14,7 +17,7 @@
     <?php component('components/logo.php') ?>
     <main>
       <div>
-        <a class="btn blanc" href="infos.php"><img src="assets/info_icon.svg" alt=""><p>Informations</p></a>
+        <a class="info-btn btn blanc" href="infos.php"><img src="assets/info_icon.svg" alt=""><p>Informations</p></a>
         <div class="carte">
           <img class="carte-img" src="assets/carte.png" alt="">
           <?php foreach($salles as $key => $salle): ?>
@@ -47,7 +50,7 @@
     <div class="popup<?= !$tuto ? ' visible' : '' ?>">
       <?php if($tuto): ?>
         <div class="popup-window">
-        <p>Voulez-vous commencer le combat de la salle <?= $currentRoom ?> ?</p>
+        <p>Voulez-vous commencer le combat de la salle <span class="break"><?= $currentRoom ?> ?</span></p>
         <div>
           <a href="battle.php?roomId=<?= substr($currentRoom, 1); ?>" class="btn">Oui</a>
           <button class="btn blanc close-popup">Non</button>
@@ -57,9 +60,12 @@
         <div class="message">
         <img src="<?= $avatar["img"] ?>" alt="<?= $avatar["nom"] ?>">
           <div class="message-content">
-            <p>A présent, je vais te guider à travers ta quête de la JPO</p>
+            <p class="current-p">A présent, je vais te guider à travers ta quête de la JPO</p>
+            <p>Vous débloquerez de nouvelles salles au fur et à mesure de votre visite.</p>
+            <p>Tu as terminé une salle ? La suivante deviendra verte et accessible en cliquant dessus. Tu pourras alors accéder au challenge de cette salle.</p>
+            <p data-mask=".info-btn">En appuyant sur le bouton "Informations" en haut à gauche de la carte, tu trouveras les professeurs présents, les matières enseignées et toutes les infos qui te seront utiles.</p>
            </div>
-          <a href="carte.php?tuto=" class="btn">Suivant</a>
+          <a href="carte.php?tuto=" class="btn next-message">Suivant</a>
         </div>
       <?php endif ?>
     </div>
