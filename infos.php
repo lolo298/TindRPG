@@ -13,7 +13,7 @@ include_once('header.php');
 
     <div class="prof overlay">
         <div class="overlay_header">
-            <button value="prof" class="ret_but btn blanc"><span>◄</span><p>Retour</p></button>
+            <button value="prof" class="ret_but btn blanc"><span>x</span><p>Fermer</p></button>
             <p class="overlay_title">Informations Professeur</p>
         </div>
         <div class="prof_card_container">
@@ -39,7 +39,7 @@ include_once('header.php');
                 <div class="overlay_coord_container">
                     <button class="btn"><p>Coordonnées</p></button>
                     <div class="coord_infos">
-                        <p class="where">Vous pourrez trouver <?php echo($value["nom"]);?> en<?php echo($value["pla"]);?></p>
+                        <p class="where">Vous pouvez trouver <?php echo($value["nom"]);?> en salle <?php echo($value["pla"]);?></p>
                         <p class="mail"> <span>✉</span><?php echo($value["mail"]);?></p>
                     </div>
                 </div>
@@ -50,7 +50,7 @@ include_once('header.php');
     
     <div class="salles overlay">
         <div class="overlay_header">
-            <button value="salles" class="ret_but btn blanc"><span>◄</span><p>Retour</p></button>
+            <button value="salles" class="ret_but btn blanc"><span>x</span><p>Fermer</p></button>
             <p class="overlay_title">Informations Salles</p>
         </div>
         <div class="info_liste">
@@ -75,7 +75,7 @@ include_once('header.php');
     
     <div class="butdj overlay">
         <div class="overlay_header">
-            <button value="butdj" class="ret_but btn blanc"><span>◄</span><p>Retour</p></button>
+            <button value="butdj" class="ret_but btn blanc"><span>x</span><p>Fermer</p></button>
             <p class="overlay_title">Informations But du Jeu</p>
         </div>
         <div class="info_liste">
