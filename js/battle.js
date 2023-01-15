@@ -14,16 +14,16 @@ async function setup() {
   await userRef.get().then((doc) => {
     data = doc.data();
     completeRooms = data.salles;
-    if(completeRooms[roomId]){
+    if (completeRooms[roomId]) {
       document.querySelector("#modalFin").querySelector("h2").innerHTML =
-      "Vous avez déja compléter cette salle !";
+        "Vous avez déja compléter cette salle !";
       document.querySelector("#modalFin").querySelector("p").innerHTML =
-      "Vous pouvez retourner à la carte pour en choisir une autre !";
+        "Vous pouvez retourner à la carte pour en choisir une autre !";
+      document.querySelector(".puzzle-container").style.display = "none";
       document.querySelector("#modalFinWrapper").querySelector("#retry").style.display = "none";
       document.querySelector("#modalFinWrapper").style.display = "flex";
     }
   });
-
 
   starterRef = db.collection("Profs").doc(fbId);
 
@@ -94,10 +94,10 @@ async function setup() {
 }
 
 /**
-*Permet de reduire les points de vie de l'ennemi ou de notre personnage
-*@param {boolean} state true = ennemi false = joueur
-*@async
-*/
+ *Permet de reduire les points de vie de l'ennemi ou de notre personnage
+ *@param {boolean} state true = ennemi false = joueur
+ *@async
+ */
 async function setLife(state) {
   // let delayVal = 50;
   let delayVal = 5;
@@ -159,10 +159,10 @@ async function setLife(state) {
 }
 
 /**
-*Verifie quelle couleur doit etre appliquée a la barre de vie
-*@param {number} val nombre de point de vie
-*@param {HTMLElement} target element html de la barre de vie
-*/
+ *Verifie quelle couleur doit etre appliquée a la barre de vie
+ *@param {number} val nombre de point de vie
+ *@param {HTMLElement} target element html de la barre de vie
+ */
 function lifeBarColor(val, target) {
   if (val >= 46) {
     target.style.backgroundColor = "#74e3a0";
@@ -174,9 +174,9 @@ function lifeBarColor(val, target) {
 }
 
 /**
-*Permet de mettre en pause le code
-*@param {number} ms temps en milliseconde
-*/
+ *Permet de mettre en pause le code
+ *@param {number} ms temps en milliseconde
+ */
 function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -296,7 +296,11 @@ function checkAnswer(idAnswer) {
         if (roomId == 19 && questionNum < questionQte) {
           setQuestion();
         } else {
-          endBattle(true);
+          if (enemyLife == 0) {
+            endBattle(true);
+          } else {
+            endBattle(false);
+          }
         }
       } else {
         console.log("mauvaise reponse");
@@ -327,13 +331,13 @@ function endBattle(state) {
     modalFin.querySelector("p").innerHTML = "Vous avez débloqué une pièce de puzzle !";
     modalFin.querySelector("#retry").style.display = "none";
     completeRooms[roomId] = true;
-    userRef.update({
+    /*userRef.update({
       salles: completeRooms
-    });
-    nbPieces = 0
-    for(val of Object.values(completeRooms)){
-      console.log(val)
-      if(val){
+    });*/
+    nbPieces = 0;
+    for (val of Object.values(completeRooms)) {
+      console.log(val);
+      if (val) {
         nbPieces++;
       }
     }
@@ -342,6 +346,7 @@ function endBattle(state) {
     if (playerLife == 0) {
       document.getElementById("Player").classList.add("kill");
     }
+    document.querySelector(".puzzle-container").style.display = "none";
     document.querySelector("#modalFin").querySelector("h2").innerHTML =
       "Dommage, vous n'avez pas réussi a battre dark " + enemyName + " !";
     document.querySelector("#modalFin").querySelector("p").innerHTML =

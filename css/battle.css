@@ -256,8 +256,8 @@ button {
     text-align: center;
 }
 
-#modalFin img {
-    width: 50%;
+#avatar {
+    width: 40%;
 }
 
 .btn {
@@ -278,6 +278,7 @@ button {
 
 #retry {
     position: relative;
+    cursor: pointer;
     color: black;
     border: 1px solid transparent;
     background-image: var(--gradiant);
@@ -306,4 +307,19 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+}
+
+#puzzle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    margin-top: 10px;
+}
+
+.puzzle-container {
+    width: 70vw;
+    height: 70vw;
 }

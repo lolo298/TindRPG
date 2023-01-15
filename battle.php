@@ -2,6 +2,8 @@
 <?php
 $id = $_SESSION['mmiquest']['prof_id'];
 $fbId = get_prof_by_id($id)['fbId'];
+$nbr_pieces = $_SESSION['mmiquest']['nbr_pieces'];
+
 ?>
 
 <body>
@@ -11,14 +13,16 @@ $fbId = get_prof_by_id($id)['fbId'];
     roomId = '<?= $_GET['roomId'] ?>';
   </script>
   <?php component('components/logo.php') ?>
-<main>
-  
+  <main>
+
     <div id="modalFinWrapper">
       <div id="modalFin">
-        <img src="" alt="" />
+        <img id="avatar" src="" alt="" />
         <h2></h2>
         <p></p>
-        <img src="./assets/Logo.png" alt="Puzzle" style="display:none;">
+        <div id="puzzle">
+          <?php component('components/puzzle.php', ['nbr_pieces' => $nbr_pieces == 5 ? $nbr_pieces : $nbr_pieces + 1]) ?>
+        </div>
         <div id="retry" class="btnEmpty btn" onclick="location.reload()">
           <p style="position:relative;cursor:pointer;">Retenter</p>
         </div>
@@ -47,7 +51,7 @@ $fbId = get_prof_by_id($id)['fbId'];
         </div>
       </div>
     </div>
-  
+
     <div class="formWrapper">
       <div class="questionWrapper">
         <p class="question">Pouvez vous répondre à cette superbe question ?</p>
@@ -58,7 +62,7 @@ $fbId = get_prof_by_id($id)['fbId'];
       <div id="retour" class="btn btnEmpty"><a href="./carte.php">Retour</a></div>
       <button id="valider" class="btn" onclick="this.disable=true;checkAnswer();">Valider</button>
     </div>
-</main>
+  </main>
   <script src="./js/global.js"></script>
   <script src="./js/battle.js"></script>
 </body>
