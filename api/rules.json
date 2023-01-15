@@ -1,18 +1,18 @@
 {
     "0": {
       "nom": "But du jeu",
-      "spe": "de développement",
-      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
+      "spe": "MMI QUEST",
+      "desc": "Le principe du jeu est simple ! Parcourez les salles de la Journée portes ouvertes, affrontez les versions maléfiques des professeurs et réunissez toutes les pièces du puzzle !"
 
     },
     "1": {
       "nom": "Puzzle",
-      "spe": "de développement",
-      "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
-    },
+      "spe": "Principe",
+      "desc": "Répondez correctement aux questions des professeurs et collectez les pièces de puzzle pour déloquer une récompense !"    },
     "2": {
         "nom": "Carte",
-        "spe": "de développement",
-        "desc": "Lorem Ipsum is simply dummy text of the printing and typesetting."
-    }
+        "spe": "Carte de la JPO",
+        "desc": "Cette carte représente le parcours de la JPO! Parcourez-les toutes pour atteindre la fin du jeu !"
+
+      }
   }
