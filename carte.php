@@ -6,6 +6,10 @@
   if(isset($_GET['pieces'])){
     $_SESSION['mmiquest']['nbr_pieces'] = $_GET['pieces'];
   }
+  if(isset($_GET['roomId']) && $_GET['roomId'] !== "29"  && array_key_exists("0" . $_GET['roomId'], $_SESSION['mmiquest']['salles'])){
+    $keys = array_keys($_SESSION['mmiquest']['salles']);
+    $_SESSION['mmiquest']['salles'][$keys[array_search("0" . $_GET['roomId'],$keys)+1]] = true;
+  }
   $salles = $_SESSION['mmiquest']['salles'];
   $nbr_pieces = $_SESSION['mmiquest']['nbr_pieces'];
   $id = $_SESSION['mmiquest']['prof_id'];

@@ -341,7 +341,7 @@ function endBattle(state) {
         nbPieces++;
       }
     }
-    document.getElementById("battleEnd").href = "./carte.php?pieces=" + nbPieces;
+    document.getElementById("battleEnd").href = "./carte.php?pieces=" + nbPieces + '&roomId=' + roomId;
   } else {
     if (playerLife == 0) {
       document.getElementById("Player").classList.add("kill");

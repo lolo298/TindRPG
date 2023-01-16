@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['mmiquest']) || isset($_GET["reset"])){
         $_SESSION['mmiquest'] = [
-            'nbr_pieces' => 3,
+            'nbr_pieces' => 0,
             'prof_id' => 0,
             'tuto_carte' => false,
             'salles' => [
