@@ -26,3 +26,9 @@ body {
     height: unset;
     width: 75%;
 }
+
+h1 {
+    display: inline-block;
+    width: 85%;
+    text-align: center;
+}

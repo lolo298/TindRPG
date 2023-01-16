@@ -5,6 +5,10 @@ body {
     align-items: center;
 }
 
+.td_applogo {
+    margin-top: 5vh;
+}
+
 .td_tutorial{
     position: absolute;
     z-index: 2;
