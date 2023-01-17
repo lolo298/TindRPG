@@ -31,7 +31,7 @@
             // Active ou désactive les salle
               $currentIndex = array_search($key, array_keys($salles));
               $finish = $nbr_pieces == 5;
-              $isCurrent = !$finish && $salle  && ($currentIndex === count($salles) - 1 || !$salles[array_keys($salles)[$currentIndex + 1]]);
+              $isCurrent = !$finish && $salle && ($currentIndex === count($salles) - 1 || !$salles[array_keys($salles)[$currentIndex + 1]]);
               if($isCurrent) $currentRoom = $key
             ?>
             <div class="salle-overlay _<?= $key . (!$salle ? ' locked' : '') . ($isCurrent ? ' current' : '') ?>" <?= $isCurrent ? "data-room='$key'" : '' ?>>

@@ -64,4 +64,4 @@
     <!-- Fin Connection Base -->
 
 </head>
-<a style="position: absolute; top: 0; left: 0;" href="<?= $file_name ?>.php?reset=">reset session</a>
+<!-- <a style="position: absolute; top: 0; left: 0;" href="<?= $file_name ?>.php?reset=">reset session</a> -->

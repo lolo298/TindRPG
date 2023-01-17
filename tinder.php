@@ -33,22 +33,22 @@ justify-content: initial;
 </html>
 <script>
     const answ_to_prof = {
-        0: "0", 
+        0: "1", 
         1: "2",
-        2: "0",
+        2: "1",
         3: "2",
         4: "4",
         5: "4",
         6: "6",
-        7: "0",
+        7: "1",
         8: "7",
         9: "3",
         10: "5",
         11: "6",
         12: "3",
         13: "2",
-        14: "0",
-        15: "1",
+        14: "1",
+        15: "0",
     };
     let lsitcards = document.querySelectorAll('.td_card')
     let likebut = document.querySelectorAll('.td_like_button');
