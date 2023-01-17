@@ -62,6 +62,9 @@ async function setup() {
     var keys = Object.keys(querySnapshot.docs);
     var randomKey = keys[Math.floor(Math.random() * keys.length)];
     doc = querySnapshot.docs[randomKey];
+    if(doc === undefined){
+      window.location.href = "carte.php";
+    }
     data = doc.data();
     enemyName = data.Nom;
     let Enemy = document.getElementById("Enemy");
