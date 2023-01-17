@@ -28,11 +28,12 @@
           <?php foreach($salles as $key => $salle): ?>
             <?php
               $currentIndex = array_search($key, array_keys($salles));
-              $isCurrent = $salle  && ($currentIndex === count($salles) - 1 || !$salles[array_keys($salles)[$currentIndex + 1]]);
+              $finish = $nbr_pieces == 5;
+              $isCurrent = !$finish && $salle  && ($currentIndex === count($salles) - 1 || !$salles[array_keys($salles)[$currentIndex + 1]]);
               if($isCurrent) $currentRoom = $key
             ?>
             <div class="salle-overlay _<?= $key . (!$salle ? ' locked' : '') . ($isCurrent ? ' current' : '') ?>" <?= $isCurrent ? "data-room='$key'" : '' ?>>
-              <?php if($isCurrent): ?>
+              <?php if($isCurrent || ($finish && $key === '029')): ?>
                 <div>
                   <img class="avatar" src="<?= $avatar["img"] ?>" alt="<?= $avatar["nom"] ?>">
                 </div>
