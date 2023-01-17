@@ -1,3 +1,8 @@
+/*
+* Active ou desactive le spinner
+* @param {boolean} state - true pour activer, false pour desactiver
+* @param {string} targetId - id de l'element cible du spinner
+*/
 function spinner(state, targetId = "Title"){
     if(state){
         let spinnerWrapper = document.createElement("div");

@@ -1,4 +1,5 @@
 <?php
+// permet d'afficher dynamiquement un composant php
 function component($filePath, $variables = array(), $print = true)
 {
     $output = NULL;

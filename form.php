@@ -20,7 +20,9 @@
             </form>
     </body>
     <script>
-
+        /**
+         * Récupères les infos du formulaire
+         */
         function getData(form) {
 
             var formData = new FormData(form);
@@ -36,6 +38,9 @@
             addDoc();
         });
 
+        /**
+         * Ajoute un nouvel utilisateur dans la BDD
+         */
         function addDoc() {
             let pieces = {
                 "16": false,

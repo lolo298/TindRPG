@@ -1,12 +1,13 @@
 <?php
   require_once('header.php');
   if(isset($_GET['tuto'])){
+    //désactive le tuto
     $_SESSION['mmiquest']['tuto_carte'] = true;
-    $_SESSION['mmiquest']['nbr_pieces'] = 1;
   }
   if(isset($_GET['pieces'])){
     $_SESSION['mmiquest']['nbr_pieces'] = $_GET['pieces'];
   }
+  // Si on a une salle en paramètre, on active la salle suivante
   if(isset($_GET['roomId']) && $_GET['roomId'] !== "29"  && array_key_exists("0" . $_GET['roomId'], $_SESSION['mmiquest']['salles'])){
     $keys = array_keys($_SESSION['mmiquest']['salles']);
     $_SESSION['mmiquest']['salles'][$keys[array_search("0" . $_GET['roomId'],$keys)+1]] = true;
@@ -27,6 +28,7 @@
           <img class="carte-img" src="assets/carte.png" alt="">
           <?php foreach($salles as $key => $salle): ?>
             <?php
+            // Active ou désactive les salle
               $currentIndex = array_search($key, array_keys($salles));
               $isCurrent = $salle  && ($currentIndex === count($salles) - 1 || !$salles[array_keys($salles)[$currentIndex + 1]]);
               if($isCurrent) $currentRoom = $key

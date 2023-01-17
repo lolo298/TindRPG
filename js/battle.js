@@ -8,6 +8,11 @@ questionQte = 0;
 let completeRooms = {};
 let userRef = db.collection("Users").doc(sessionStorage.getItem("id"));
 setup();
+
+/**
+* Récupère les données de l'utilisateur sur la BDD puis créer l'interface de combat
+* @async
+*/
 async function setup() {
 
   await userRef.get().then((doc) => {

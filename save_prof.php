@@ -8,6 +8,7 @@ $spe = get_prof_by_id($_SESSION['mmiquest']['prof_id'])['spe'];
    <div class="spinnerWrapper"><div id="spinner"></div></div>
 <script>
    spinner(true);
+   // On enregistre le prof de l'utilisateur dans la BDD
  db.collection("Users").doc(sessionStorage.getItem("id")).update({
     "avatar": "<?= $nom[0] ?>",
     "matiere": "<?= $spe ?>",

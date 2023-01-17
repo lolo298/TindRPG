@@ -1,8 +1,9 @@
 <?php
     session_start();
+    // initialise les infos de session si elles n'existent pas ou après un reset
     if(!isset($_SESSION['mmiquest']) || isset($_GET["reset"])){
         $_SESSION['mmiquest'] = [
-            'nbr_pieces' => 0,
+            'nbr_pieces' => 1,
             'prof_id' => 0,
             'tuto_carte' => false,
             'salles' => [

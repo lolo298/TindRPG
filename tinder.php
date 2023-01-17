@@ -68,7 +68,10 @@ justify-content: initial;
     function add_result(data){
         result += data
         if(result.length == 4){
-            location.href = "tinder_result.php?pid="+answ_to_prof[parseInt(result, 2)];
+            setTimeout(function(){
+                window.location.href = "tinder_result.php?pid="+answ_to_prof[parseInt(result, 2)];
+            }, 1000)
+            
         }
     }
     
