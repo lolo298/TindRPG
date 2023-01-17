@@ -2,6 +2,7 @@
   require_once('header.php');
   if(isset($_GET['tuto'])){
     $_SESSION['mmiquest']['tuto_carte'] = true;
+    $_SESSION['mmiquest']['nbr_pieces'] = 1;
   }
   if(isset($_GET['pieces'])){
     $_SESSION['mmiquest']['nbr_pieces'] = $_GET['pieces'];

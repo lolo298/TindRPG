@@ -331,10 +331,10 @@ function endBattle(state) {
     modalFin.querySelector("p").innerHTML = "Vous avez débloqué une pièce de puzzle !";
     modalFin.querySelector("#retry").style.display = "none";
     completeRooms[roomId] = true;
-    /*userRef.update({
+    userRef.update({
       salles: completeRooms
-    });*/
-    nbPieces = 0;
+    });
+    nbPieces = 1;
     for (val of Object.values(completeRooms)) {
       console.log(val);
       if (val) {
