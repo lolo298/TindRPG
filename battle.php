@@ -60,7 +60,7 @@ $nbr_pieces = $_SESSION['mmiquest']['nbr_pieces'];
     </div>
     <div class="boutonSuite">
       <div id="retour" class="btn btnEmpty"><a href="./carte.php">Retour</a></div>
-      <button id="valider" class="btn" onclick="this.disable=true;checkAnswer();">Valider</button>
+      <button id="valider" class="btn disabled" onclick="this.disable=true;checkAnswer();" disabled>Valider</button>
     </div>
   </main>
   <script src="./js/global.js"></script>

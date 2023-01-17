@@ -323,3 +323,8 @@ button {
     width: 70vw;
     height: 70vw;
 }
+
+.disabled {
+    pointer-events: none;
+    filter: grayscale(80%);
+}

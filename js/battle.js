@@ -9,7 +9,6 @@ let completeRooms = {};
 let userRef = db.collection("Users").doc(sessionStorage.getItem("id"));
 setup();
 async function setup() {
-  console.log("setup");
 
   await userRef.get().then((doc) => {
     data = doc.data();
@@ -106,14 +105,12 @@ async function setLife(state) {
     if (questionQte == 2) {
       enemyLife--;
       if (enemyLife == 1) {
-        console.log("mid");
         for (let i = 93; i >= 45; i--) {
           enemyLifeBar.style.maxWidth = i + "px";
           lifeBarColor(i, enemyLifeBar);
           await delay(delayVal);
         }
       } else if (enemyLife == 0) {
-        console.log("KO");
         for (let i = 45; i >= 0; i--) {
           enemyLifeBar.style.maxWidth = i + "px";
           lifeBarColor(i, enemyLifeBar);
@@ -133,14 +130,12 @@ async function setLife(state) {
     if (questionQte == 2) {
       playerLife--;
       if (playerLife == 1) {
-        console.log("mid");
         for (let i = 93; i >= 45; i--) {
           playerLifeBar.style.maxWidth = i + "px";
           lifeBarColor(i, playerLifeBar);
           await delay(delayVal);
         }
       } else if (playerLife == 0) {
-        console.log("KO");
         for (let i = 45; i >= 0; i--) {
           playerLifeBar.style.maxWidth = i + "px";
           lifeBarColor(i, playerLifeBar);
@@ -182,17 +177,16 @@ function delay(ms) {
 }
 
 /**
- * Permet de charger les questions
+ * Permet de charger les questions de la salle depuis la base de données
  * @async
  */
 async function setQuestion() {
-  console.log("setQuestion");
+  document.querySelector("#valider").disabled = true;
+  document.querySelector("#valider").classList.add("disabled");
   questionRef = db.collection("Salles").where("salle", "==", parseInt(roomId));
   questionRef.get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      console.log(querySnapshot);
       data = doc.data();
-      console.log(data);
       questionNum++;
       let questionHTML = document.querySelector(".question");
       let answerHTML = document.getElementById("Reponses");
@@ -203,12 +197,10 @@ async function setQuestion() {
         if (questions.length == 0 && reponses.length == 0) {
           for (let i = 1; i <= 2; i++) {
             questions[i - 1] = data["question" + i].question;
-            console.log(questions);
             reponses[i - 1] = data["question" + i].reponses;
             goodAnswers[i - 1] = data["question" + i].reponse;
           }
         }
-        console.log("questions:", questions);
         currentQuestion = questions[questionNum - 1];
         currentReponses = reponses[questionNum - 1];
         questionHTML.innerHTML = currentQuestion;
@@ -220,7 +212,6 @@ async function setQuestion() {
           });
         });
         document.querySelector("#valider").disabled = false;
-        console.log(enemyLife);
         document
           .getElementById("valider")
           .setAttribute("onclick", "this.disabled=true;checkAnswer(" + questionNum + ");");
@@ -240,7 +231,6 @@ async function setQuestion() {
           });
         });
         document.querySelector("#valider").disabled = false;
-        console.log(enemyLife);
         document
           .getElementById("valider")
           .setAttribute("onclick", "this.disabled=true;checkAnswer(1);");
@@ -267,7 +257,7 @@ function createAnswer(answer, id) {
   label.className = "reponseCheck";
   label.id = "reponseCheck" + id;
   label.innerHTML = answer;
-
+  label.setAttribute("onclick", 'document.querySelector("#valider").disabled = false;document.querySelector("#valider").classList.remove("disabled");');
   return [input, label];
 }
 
@@ -283,10 +273,7 @@ function checkAnswer(idAnswer) {
     querySnapshot.forEach(async (doc) => {
       data = doc.data();
       goodAnswer = goodAnswers[idAnswer - 1];
-      console.log("answer:", answer);
-      console.log("good:", goodAnswer);
       if (goodAnswer == answer) {
-        console.log("bonne reponse");
         labelAnswer.classList.add("goodAnswer");
         let allCheckbox = document.querySelectorAll(".reponse");
         allCheckbox.forEach((checkbox) => {
@@ -303,7 +290,6 @@ function checkAnswer(idAnswer) {
           }
         }
       } else {
-        console.log("mauvaise reponse");
         let allCheckbox = document.querySelectorAll(".reponse");
         labelAnswer.classList.add("badAnswer");
         allCheckbox.forEach((checkbox) => {
@@ -336,7 +322,6 @@ function endBattle(state) {
     });
     nbPieces = 1;
     for (val of Object.values(completeRooms)) {
-      console.log(val);
       if (val) {
         nbPieces++;
       }
